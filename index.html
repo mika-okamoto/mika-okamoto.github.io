@@ -1,1 +1,384 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mika Okamoto - Researcher</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="icon" href="images/logo.jpg" type="image/jpg">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">Mika Okamoto</div>
+            <nav>
+                <ul>
+                    <li><a href="#about" class="active">About</a></li>
+                    <li><a href="#news">News</a></li>
+                    <li><a href="#experience-highlights">Experience</a></li>
+                    <li><a href="#research">Research & Publications</a></li>
+                    <li><a href="#projects-experiences">Projects & Work</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li>
+                        <button id="darkModeToggle" aria-label="Switch to Dark Mode">
+                            <i id="darkModeIcon" class="fas fa-moon fa-lg"></i>
+                            <span id="darkModeText" class="sr-only">Switch to Dark Mode</span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <section id="about" class="about-section">
+            <div class="about-content">
+                <h1>Mika Okamoto</h1>
+                <p>
+                    I'm a B.S./M.S. student in Computer Science at the Georgia Institute of Technology, graduating in May 2027. I'm passionate about Explainable AI and Automated Reasoning, and I'm especially interested in how these areas can be applied to complex, real-world domains.
+                </p>
+                <p>
+                    I currently work as a Research Assistant at the <a href="https://www.gtri.gatech.edu/focus-areas/advanced-research-computing-and-artificial-intelligence" target="_blank">GTRI ARCAID Lab</a>, where I explore hierarchical representation learning to improve reasoning systems. I also contribute to the <a href="https://fintech.gatech.edu/" target="_blank">GT Financial Services Innovation Lab</a>, developing natural language processing and explainability techniques for financial market analysis. In addition, I collaborate with the <a href="https://eilab.gatech.edu/" target="_blank">Entertainment Intelligence & Human-Centered AI (EI & HCAI) Lab</a> on projects related to explainable AI and machine unlearning.
+                </p>
+                <p>
+                    Beyond research, I'm interested in software engineering, machine learning engineering, and data science. This summer (2025), I’ll be interning as a Software Engineer at Two Sigma Investments. I'm always happy to connect — feel free to reach out!
+                </p>
+                <div class="profile-links">
+                    <a href="https://scholar.google.com/citations?user=rcmk3uwAAAAJ&hl=en" target="_blank" title="Google Scholar" aria-label="Google Scholar Profile"><i class="fas fa-graduation-cap fa-2x"></i><span class="sr-only">Google Scholar</span></a>
+                    <a href="https://github.com/mika-okamoto" target="_blank" title="GitHub"><i class="fab fa-github fa-2x"></i><span class="sr-only">GitHub</span></a>
+                    <a href="https://linkedin.com/in/mokamoto" target="_blank" title="LinkedIn"><i class="fab fa-linkedin fa-2x"></i><span class="sr-only">LinkedIn</span></a>
+                    <a href="mailto:mikahokamoto@gmail.com" title="Email"><i class="fas fa-envelope fa-2x"></i><span class="sr-only">Email</span></a>
+                </div>
+            </div>
+            <div class="about-photo">
+                <img src="images/headshot.jpg" alt="Mika Okamoto Professional Headshot">
+            </div>
+        </section>
+
+        <section id="news" class="news-section">
+            <h2>Recent News & Updates</h2>
+            <ul>
+                <li><strong>Summer 2025</strong> – Excited to be joining Two Sigma Investments as a Software Engineering Intern!</li>
+                <li><strong>April 2025</strong> – 🎉 <strong>BELLA</strong> (Budget-Efficient LLM Selection via Automated Skill Profiling) was accepted to MLSys YPS 2025! I’ll be presenting a poster at the symposium.</li>
+                <!-- <li><strong>April 2025</strong> – 🎉 <strong>FLaME</strong> (Holistic Finance Language Model Evaluation) was accepted to ACL 2025!</li> -->
+            </ul>
+        </section>
+
+        <section id="experience-highlights" class="experience-timeline-section homepage-experience-section">
+            <h2>Experience Highlights</h2>
+            <ul class="timeline">
+
+                <li class="timeline-row">
+                    <span class="timeline-dot"></span> <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <a href="#exp-two-sigma" class="timeline-link-overlay"><span class="sr-only">View details for Two Sigma Investments experience</span></a>
+                            <div class="far-side">
+                                <img src="images/twosigma.png" alt="Two Sigma Investments Logo" class="company-logo-timeline">
+                                <span class="timeline-dates">June 2025 - Aug 2025</span>
+                            </div>
+                            <div class="center-side">
+                                <h4 class="timeline-company">Two Sigma Investments</h4>
+                                <p class="timeline-role">Software Engineering Intern</p>
+                                <p class="timeline-description">Upcoming, Summer 2025.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item right">
+                         <div class="timeline-content">
+                            <a href="#exp-gtri" class="timeline-link-overlay"><span class="sr-only">View details for Georgia Tech Research Institute experience</span></a>
+                            <div class="far-side">
+                                <img src="images/gtri.jpg" alt="Georgia Tech Research Institute (GTRI) Logo" class="company-logo-timeline">
+                                <span class="timeline-dates">Jan 2024 - Present</span>
+                            </div>
+                            <div class="center-side">
+                                <h4 class="timeline-company">Georgia Tech Research Institute</h4>
+                                <p class="timeline-role">Advisors: <a href="https://scholar.google.com/citations?user=FPtjf0gAAAAJ&hl=en" target="_blank" class="interactive-link">Clayton Kerce</a>, <a href="https://scholar.google.com/citations?user=5JcRw-sAAAAJ&hl=en" target="_blank" class="interactive-link">Pat Langley</a></p>
+                                <p class="timeline-description">Automated reasoning through learning hierarchical representations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="timeline-row">
+                    <span class="timeline-dot"></span> <div class="timeline-item left">
+                         <div class="timeline-content">
+                            <a href="#exp-rtx" class="timeline-link-overlay"><span class="sr-only">View details for Raytheon Technologies experience</span></a>
+                            <div class="far-side">
+                                <img src="images/rtx.png" alt="Raytheon Technologies (RTX) Logo" class="company-logo-timeline">
+                                <span class="timeline-dates">May 2024 - Aug 2024</span>
+                            </div>
+                            <div class="center-side">
+                                <h4 class="timeline-company">Raytheon Technologies</h4>
+                                <p class="timeline-role">AI Algorithm Engineering Intern</p>
+                                <p class="timeline-description">Integrated explainable AI methods into data workflows.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item right">
+                         <div class="timeline-content">
+                            <a href="#exp-fintech" class="timeline-link-overlay"><span class="sr-only">View details for GT FinTech Lab (FSIL) experience</span></a>
+                            <div class="far-side">
+                                <img src="images/gt.jpg" alt="Georgia Tech Logo" class="company-logo-timeline">
+                                <span class="timeline-dates">Jan 2024 - Present</span>
+                            </div>
+                            <div class="center-side">
+                                <h4 class="timeline-company">GT FinTech Lab (FSIL)</h4>
+                                <p class="timeline-role">Advisor: <a href="https://scholar.google.com/citations?user=AXYf-i8AAAAJ&hl=en" target="_blank" class="interactive-link">Sudheer Chava</a></p>
+                                <p class="timeline-description">Natural language processing and explainable AI for financial markets.</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="timeline-row">
+                    <span class="timeline-dot"></span>
+                    <div class="timeline-item left">
+                         <div class="timeline-content">
+                            <a href="#exp-ucsd" class="timeline-link-overlay"><span class="sr-only">View details for UCSD Palmer Lab experience</span></a>
+                            <div class="far-side">
+                                <img src="images/ucsd.png" alt="UCSD Logo" class="company-logo-timeline">
+                                <span class="timeline-dates">June 2023 - Sept 2023</span>
+                            </div>
+                            <div class="center-side">
+                                <h4 class="timeline-company">UCSD Palmer Lab</h4>
+                                <p class="timeline-role">Advisor: <a href="https://scholar.google.com/citations?user=eRPyQPMAAAAJ&hl=en" target="_blank" class="interactive-link">Abraham Palmer</a></p>
+                                <p class="timeline-description">Applied machine learning for genetic trait prediction.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item right">
+                         <div class="timeline-content">
+                             <a href="#exp-ei-hcai" class="timeline-link-overlay"><span class="sr-only">View details for GT EI & HCAI Lab experience</span></a>
+                             <div class="far-side">
+                                 <img src="images/gt.jpg" alt="Georgia Tech Logo" class="company-logo-timeline">
+                                 <span class="timeline-dates">Jan 2025 - Present</span>
+                             </div>
+                             <div class="center-side">
+                                 <h4 class="timeline-company">GT EI & HCAI Lab</h4>
+                                  <p class="timeline-role">Advisor: <a href="https://scholar.google.com/citations?user=Yg_QjxcAAAAJ&hl=en" target="_blank" class="interactive-link">Mark Riedl</a></p>
+                                 <p class="timeline-description">Explainable AI and machine unlearning.</p>
+                             </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section id="research" class="research-section">
+            <h2>Research & Publications</h2>
+
+            <section class="featured-projects-section">
+                <h3>Highlighted Research Projects</h3>
+                <div class="project-horizontal-list">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="images/bella_overview.svg" alt="BELLA Project Overview thumbnail">
+                        </div>
+                        <div class="project-details">
+                            <h3><strong>BELLA: Budget-Efficient LLM Selection via Automated Skill Profiling</strong></h3>
+                            <p class="project-authors"><strong>Mika Okamoto</strong>, Ansel Erol, Glenn Matlin, Sudheer Chava</p>
+                            <p class="project-description">
+                                BELLA addresses the challenge of selecting the most suitable Large Language Model (LLM) for a given task under real-world constraints (latency, budget). BELLA analyzes LLM outputs to identify interpretable skills and weaknesses, creating structured profiles to recommend models that offer the best utility within user defined resource constraints, bridging the gap between benchmark accuracy and deployment needs.
+                            </p>
+                            <p class="project-links">
+                                <a href="images/Bella_Paper.pdf" target="_blank">Paper</a>
+                                <a href="images/MLSysBella.pdf" target="_blank">Poster (MLSys YPS '25)</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="images/rattaca.jpg" alt="RATTACA Project thumbnail">
+                        </div>
+                        <div class="project-details">
+                            <h3><strong>RATTACA: Genetic predictions in Heterogeneous Stock rats offer a new tool for genetic correlation and experimental design</strong></h3>
+                            <p class="project-authors">Benjamin B Johnson, Thiago M Sanches, <strong>Mika H Okamoto</strong>, Khai-Min Nguyen, Clara A Ortez, Oksana Polesskaya, Abraham A Palmer</p>
+                            <p class="project-description">
+                                RATTACA introduces a novel research paradigm using genetic predictions from Heterogenous Stock (HS) rats (via linear mixed models) to efficiently identify putative genetic correlations and facilitate a priori sampling of individuals with extreme trait values, offering a viable alternative to intensive experimental phenotyping.
+                            </p>
+                            <p class="project-links">
+                                <a href="https://www.biorxiv.org/content/10.1101/2023.09.18.558279v1.full.pdf" target="_blank">Preprint</a>
+                                <a href="https://ratgenes.org/wp-content/uploads/2024/02/Johnson_2023_NIDA_rattaca-2.pdf" target="_blank">Poster</a>
+                                <a href="https://github.com/Palmer-Lab-UCSD/rattaca" target="_blank">Code</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <h3>Publications</h3>
+            <p style="font-size: 0.9em; color: #555; margin-bottom: 1.5em;">*= denotes equal contribution</p>
+            <ul class="publications-list">
+                <!-- <li>
+                    <span class="publication-title"><strong>FLaME (Holistic Finance Language Model Evaluation)</strong>.</span>
+                    <span class="publication-authors">Glenn Matlin*, <strong>Mika Okamoto</strong>*, Huzaifa Pardawala*, Yang Yang, Sudheer Chava.</span>
+                    <span class="publication-venue">Accepted to *ACL 2025*.</span>
+                    <span class="publication-links">
+                        <a href="[Link to FLaME Paper PDF - Placeholder]" target="_blank">Paper</a>
+                        <a href="https://huggingface.co/spaces/gtfintechlab/FLaME" target="_blank">Demo</a>
+                        <a href="https://github.com/gtfintechlab/FLaME" target="_blank">Code</a>
+                    </span>
+                </li> -->
+                <!-- <li>
+                    <span class="publication-title"><strong>Enhancing Military Family Readiness and Resilience Programs Through LLM-Generated Synthetic Data and Natural Language Interfaces</strong>.</span>
+                    <span class="publication-authors">Anantharaman Iyer*, <strong>Mika Okamoto</strong>*, Agustin Lorenzo, Blair Johnson, Moon Kim, Clayton Kerce, Margarita Gonzalez.</span>
+                    <span class="publication-links">
+                        <a href="[Link to Paper PDF - Placeholder]" target="_blank">Paper</a>
+                        <a href="[Link to Project Page/Code - Placeholder]" target="_blank">Details/Code</a>
+                    </span>
+                </li> -->
+                <li>
+                    <span class="publication-title"><strong>BELLA: Budget-Efficient LLM Selection via Automated Skill Profiling</strong>.</span>
+                    <span class="publication-authors"><strong>Mika Okamoto</strong>, Ansel Erol, Glenn Matlin, Sudheer Chava.</span>
+                    <span class="publication-venue">Poster presentation at <a href='https://mlsys.org/Conferences/2025/YPS' target="_blank">MLSys Young Professionals Symposium (YPS) 2025</a>.</span>
+                    <span class="publication-links">
+                        <a href="images/Bella_Paper.pdf" target="_blank">Preprint</a>
+                        <a href="images/MLSysBella.pdf" target="_blank">Poster PDF</a>
+                    </span>
+                </li>
+                <li>
+                    <span class="publication-title"><strong>RATTACA: Genetic predictions in Heterogeneous Stock rats offer a new tool for genetic correlation and experimental design</strong>.</span>
+                    <span class="publication-authors">Benjamin B Johnson, Thiago M Sanches, <strong>Mika H Okamoto</strong>, Khai-Min Nguyen, Clara A Ortez, Oksana Polesskaya, Abraham A Palmer.</span>
+                    <span class="publication-links">
+                        <a href="https://www.biorxiv.org/content/10.1101/2023.09.18.558279v1.full.pdf" target="_blank">Preprint</a>
+                        <a href="https://github.com/Palmer-Lab-UCSD/rattaca" target="_blank">Code</a>
+                    </span>
+                </li>
+                <li>
+                    <span class="publication-title"><strong>Benchmarking LLM Performance on Financial Tasks with Optimized Prompting Strategies</strong>.</span>
+                    <span class="publication-authors"><strong>Mika Okamoto</strong>.</span>
+                    <span class="publication-links">
+                        <a href="images/Benchmarking_Prompting_Methods_Paper.pdf" target="_blank">Paper</a>
+                    </span>
+                </li>
+                <li>
+                    <span class="publication-title"><strong>Genome-wide association study of age-related hearing loss in CFW mice identifies multiple genes and loci, including Prkag2</strong>.</span>
+                    <span class="publication-authors">Oksana Polesskaya, Ely Boussaty, Riyan Cheng, Olivia A. Lamonte, Thomas Y. Zhou, Eric Du, Thiago Missfeldt Sanches, <strong>Mika Okamoto</strong>, Abraham A Palmer, Rick Friedman.</span>
+                    <!-- <span class="publication-venue">Journal of the Association for Research in Otolaryngology. 2024 Jun 1.</span> -->
+                    <span class="publication-links">
+                        <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11195089/" target="_blank">Preprint</a>
+                    </span>
+                </li>
+            </ul>
+        </section>
+
+        <section id="projects-experiences" class="projects-experiences-section">
+            <h2>Projects & Work Experiences</h2>
+
+            <h3>Work Experience</h3>
+            <div class="card-banner-container">
+                <div class="card-banner" id="exp-two-sigma">
+                    <img src="images/twosigma.png" alt="Two Sigma Investments Logo">
+                    <div class="card-banner-text">
+                        <h4>Two Sigma Investments</h4>
+                        <p class="role-dates">Software Engineering Intern | June 2025 – August 2025</p>
+                        <div class="artifact-links"></div>
+                        <ul>
+                            <li>Upcoming summer internship.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-banner" id="exp-rtx">
+                    <img src="images/rtx.png" alt="Raytheon Technologies (RTX) Logo">
+                    <div class="card-banner-text">
+                        <h4>Raytheon Technologies (RTX)</h4>
+                        <p class="role-dates">AI Algorithm Engineering Intern | May 2024 – August 2024</p>
+                        <div class="artifact-links"></div>
+                        <ul>
+                            <li>Developed a Python framework to integrate explainable AI techniques into data workflows, enhancing customer communication and trust.</li>
+                            <li>Integrated MLflow to improve MLOps tracking and reproducibility, saving 50+ hours/month.</li>
+                            <li>Created a multithreaded security system that improved real-time data processing speed by 5x for object detection, integrating 5 cameras and 3 ML models on limited computational resources.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Research Lab Experiences</h3>
+            <div class="card-banner-container">
+                <div class="card-banner" id="exp-gtri">
+                    <img src="images/gtri.jpg" alt="Georgia Tech Research Institute (GTRI) Logo">
+                    <div class="card-banner-text">
+                        <h4>Georgia Tech Research Institute (GTRI) - ARCAID</h4>
+                        <p class="role-dates">Research Assistant | January 2024 – Present</p>
+                         <div class="artifact-links">
+                            <a href="https://scholar.google.com/citations?user=FPtjf0gAAAAJ&hl=en" target="_blank">Advisor: Clayton Kerce</a>
+                            <a href="https://scholar.google.com/citations?user=5JcRw-sAAAAJ&hl=en" target="_blank">Advisor: Pat Langley</a>
+                         </div>
+                        <ul>
+                            <li>Investigating scientific claim decomposition and verification using AI agents and search algorithms.</li>
+                            <li>Researching techniques for learning generalized methods and solutions to planning problems via hierarchical problem networks to reduce search complexity.</li>
+                            <li>Built a RAG-enhanced chatbot and simulation pipeline (code generation, execution, debugging) to accelerate research onboarding and experimentation.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-banner" id="exp-fintech">
+                    <img src="images/gt.jpg" alt="Georgia Tech Logo">
+                   <div class="card-banner-text">
+                        <h4>Georgia Tech - Financial Services Innovations Lab (FinTech Lab)</h4>
+                        <p class="role-dates">Research Assistant | January 2024 – Present</p>
+                        <div class="artifact-links">
+                            <a href="https://scholar.google.com/citations?user=AXYf-i8AAAAJ&hl=en" target="_blank">Advisor: Sudheer Chava</a>
+                            <!-- <a href="[Link to FLaME Paper PDF - Placeholder]" target="_blank">FLaME (ACL 2025)</a> -->
+                            <a href="images/MLSysBella.pdf" target="_blank">BELLA (MLSys YPS 2025)</a>
+                            <a href="https://drive.google.com/file/d/1ogi2qlS2lryWmX4QKoISFISqbci-lCKn/view?usp=sharing" target="_blank">LLM Prompting Report</a>
+                        </div>
+                        <ul>
+                            <li>Researched budget-efficient LLM selection via automated, interpretable skill profiling.</li>
+                            <li>Created a finance holistic evaluation benchmark for assessing language model capabilities.</li>
+                            <li>Benchmarked LLM prompting methods for financial sentiment classification, achieving 10% relative improvement over baselines via automated prompt optimization.</li>
+                        </ul>
+                   </div>
+                </div>
+                <div class="card-banner" id="exp-ei-hcai">
+                    <img src="images/gt.jpg" alt="Georgia Tech Logo">
+                    <div class="card-banner-text">
+                        <h4>Georgia Tech - EI & HCAI Lab</h4>
+                        <p class="role-dates">Research Assistant | January 2025 – Present</p>
+                        <div class="artifact-links">
+                            <a href="https://scholar.google.com/citations?user=Yg_QjxcAAAAJ&hl=en" target="_blank">Advisor: Mark Riedl</a>
+                        </div>
+                        <ul>
+                            <li>Researching machine unlearning methods to identify training data correlations with language model performance on specific task domains.</li>
+                        </ul>
+                    </div>
+                </div>
+               <div class="card-banner" id="exp-ucsd">
+                    <img src="images/ucsd.png" alt="UCSD Logo">
+                   <div class="card-banner-text">
+                        <h4>Palmer Lab at UCSD</h4>
+                        <p class="role-dates">Bioinformatics Intern | June 2023 – October 2023</p>
+                        <div class="artifact-links">
+                            <a href="https://scholar.google.com/citations?user=eRPyQPMAAAAJ&hl=en" target="_blank">Advisor: Abraham Palmer</a>
+                            <a href="https://www.biorxiv.org/content/10.1101/2023.09.18.558279v1.full.pdf" target="_blank">RATTACA</a>
+                            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11195089/" target="_blank">Mice Hearing Loss</a>
+                        </div>
+                        <ul>
+                            <li>Improved phenotype trait prediction machine learning pipeline with rat genetic data through data reduction (7.3M features to 50k features) with minimal performance degradation.</li>
+                            <li>Performed data analysis on phenotype datasets for quality control and GWAS pipeline preparation.</li>
+                        </ul>
+                   </div>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="contact-section">
+            <h2>Contact</h2>
+            <p>I'm always interested in connecting with others in the field. Please feel free to reach out if you think our interests align!</p>
+            <p>
+                Email: <a href="mailto:mikahokamoto@gmail.com">mikahokamoto@gmail.com</a><br>
+                LinkedIn: <a href="https://linkedin.com/in/mokamoto" target="_blank">linkedin.com/in/mokamoto</a>
+            </p>
+        </section>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 Mika Okamoto. All rights reserved.</p>
+            <p style="font-size: 0.8em; margin-top: 0.5em;">Last updated: April 20, 2025</p> </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
