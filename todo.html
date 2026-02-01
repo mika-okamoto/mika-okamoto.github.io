@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shared To-Do</title>
+    <style>
+        /* --- CSS STYLING --- */
+        :root {
+            --primary: #6c5ce7;
+            --bg: #f4f7f6;
+            --danger: #ff7675;
+            --success: #00b894;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            color: #333;
+        }
+
+        /* Login Overlay */
+        #login-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(255,255,255,0.98);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        #password-input {
+            padding: 10px 15px;
+            font-size: 16px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            outline: none;
+            width: 250px;
+        }
+
+        #password-input:focus { border-color: var(--primary); }
+
+        /* Main App Container */
+        .app-container {
+            width: 100%;
+            max-width: 450px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            overflow: hidden;
+            display: none; /* Hidden until unlocked */
+            flex-direction: column;
+        }
+
+        .header {
+            background: var(--primary);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .status-dot {
+            height: 10px; width: 10px;
+            background-color: #fff;
+            border-radius: 50%;
+            opacity: 0.5;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            max-height: 60vh;
+            overflow-y: auto;
+            min-height: 100px;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .task-text {
+            flex-grow: 1;
+            margin: 0 15px;
+            font-size: 16px;
+        }
+
+        li.completed .task-text {
+            text-decoration: line-through;
+            color: #aaa;
+        }
+
+        button {
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .btn-check { color: #ddd; }
+        .btn-check:hover { color: var(--success); }
+        li.completed .btn-check { color: var(--success); }
+
+        .btn-delete { color: #ddd; margin-left: 10px; }
+        .btn-delete:hover { color: var(--danger); }
+
+        .input-area {
+            display: flex;
+            border-top: 2px solid #eee;
+            padding: 15px;
+            background: white;
+        }
+
+        #new-task {
+            flex-grow: 1;
+            border: none;
+            background: #f0f2f5;
+            padding: 12px 15px;
+            border-radius: 20px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        #add-btn {
+            background: var(--primary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-left: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="login-overlay">
+        <h2>Restricted Access</h2>
+        <input type="password" id="password-input" placeholder="Enter Password">
+        <button onclick="checkPassword()" style="background:var(--primary); color:white; padding:8px 20px; border-radius:6px; font-size:14px; margin-top:10px;">Unlock</button>
+        <p id="error-msg" style="color:var(--danger); font-size:12px; margin-top:10px; display:none;">Incorrect Password</p>
+    </div>
+
+    <div class="app-container" id="app">
+        <div class="header">
+            <span id="header-title">To-Do List</span>
+            <div class="status-dot" id="sync-status" title="Sync Status"></div>
+        </div>
+        <ul id="todo-list">
+            <li style="color:#999; text-align:center; padding:20px;">Loading tasks...</li>
+        </ul>
+        
+        <div class="input-area" id="input-area">
+            <input type="text" id="new-task" placeholder="Add a new task..." onkeypress="handleEnter(event)">
+            <button id="add-btn" onclick="addTask()">+</button>
+        </div>
+    </div>
+
+    <script>
+        // ==========================================
+        // 1. CONFIGURATION (PASTE KEYS HERE)
+        // ==========================================
+        const BIN_ID = '697ee696d0ea881f40980e9f'; 
+        const API_KEY = '$2a$10$RGWtPomPQWyJ18.hgX4ccuczNKGEmn3A82c//DYppkADrFYHIWArW';
+﻿
+        const BASE_URL = `https://api.jsonbin.io/v3/b/${BIN_ID}`;
+
+        // Passwords
+        const MASTER_PASS = "meowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmoew";
+        const GUEST_PASS = "bunnypair";
+
+        // ==========================================
+        // 2. INITIALIZATION
+        // ==========================================
+        let todos = [];
+        let userMode = 'guest'; // 'guest' or 'admin'
+
+        // Check if already logged in this session
+        const storedMode = sessionStorage.getItem('userMode');
+        if (storedMode) {
+            userMode = storedMode;
+            unlockApp();
+        }
+
+        // ==========================================
+        // 3. FUNCTIONS
+        // ==========================================
+
+        function checkPassword() {
+            const input = document.getElementById('password-input').value;
+            
+            if (input === MASTER_PASS) {
+                userMode = 'admin';
+                sessionStorage.setItem('userMode', 'admin');
+                unlockApp();
+            } else if (input === GUEST_PASS) {
+                userMode = 'guest';
+                sessionStorage.setItem('userMode', 'guest');
+                unlockApp();
+            } else {
+                document.getElementById('error-msg').style.display = 'block';
+            }
+        }
+
+        function unlockApp() {
+            document.getElementById('login-overlay').style.display = 'none';
+            document.getElementById('app').style.display = 'flex';
+            
+            // Adjust UI based on permissions
+            if (userMode === 'guest') {
+                document.getElementById('input-area').style.display = 'none'; // Hide add bar
+                document.getElementById('header-title').innerText = "To-Do (View Only)";
+            } else {
+                document.getElementById('input-area').style.display = 'flex'; // Show add bar
+                document.getElementById('header-title').innerText = "To-Do (Admin)";
+            }
+
+            fetchTodos();
+        }
+
+        async function fetchTodos() {
+            updateStatus('loading');
+            try {
+                const response = await fetch(BASE_URL + '/latest', {
+                    headers: { 'X-Master-Key': API_KEY }
+                });
+                const data = await response.json();
+                todos = Array.isArray(data.record) ? data.record : [];
+                renderList();
+                updateStatus('synced');
+            } catch (error) {
+                console.error("Error fetching:", error);
+                alert("Could not load list.");
+                updateStatus('error');
+            }
+        }
+
+        async function saveTodos() {
+            updateStatus('saving');
+            renderList(); // Optimistic update
+            
+            try {
+                await fetch(BASE_URL, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-Master-Key': API_KEY
+                    },
+                    body: JSON.stringify(todos)
+                });
+                updateStatus('synced');
+            } catch (error) {
+                console.error("Error saving:", error);
+                alert("Failed to save changes!");
+                updateStatus('error');
+            }
+        }
+
+        function addTask() {
+            if (userMode !== 'admin') return; // Security check
+
+            const input = document.getElementById('new-task');
+            const text = input.value.trim();
+            if (text) {
+                todos.push({ text: text, done: false });
+                input.value = '';
+                saveTodos();
+            }
+        }
+
+        function toggleDone(index) {
+            // Both Guest and Admin can toggle checkmarks
+            todos[index].done = !todos[index].done;
+            saveTodos();
+        }
+
+        function removeTask(index) {
+            if (userMode !== 'admin') return; // Security check
+            todos.splice(index, 1);
+            saveTodos();
+        }
+
+        function handleEnter(e) {
+            if (e.key === 'Enter') addTask();
+        }
+
+        function renderList() {
+            const list = document.getElementById('todo-list');
+            list.innerHTML = '';
+
+            if (todos.length === 0) {
+                list.innerHTML = '<li style="color:#ccc; justify-content:center;">No tasks yet!</li>';
+                return;
+            }
+
+            todos.forEach((todo, index) => {
+                const li = document.createElement('li');
+                if (todo.done) li.classList.add('completed');
+
+                // Determine if delete button should be shown
+                const deleteBtn = userMode === 'admin' 
+                    ? `<button class="btn-delete" onclick="removeTask(${index})">&#10005;</button>` 
+                    : '';
+
+                li.innerHTML = `
+                    <button class="btn-check" onclick="toggleDone(${index})">
+                        ${todo.done ? '&#10003;' : '&#9711;'} 
+                    </button>
+                    <span class="task-text">${todo.text}</span>
+                    ${deleteBtn}
+                `;
+                list.appendChild(li);
+            });
+        }
+
+        function updateStatus(state) {
+            const dot = document.getElementById('sync-status');
+            if (state === 'loading' || state === 'saving') {
+                dot.style.backgroundColor = '#f1c40f'; 
+            } else if (state === 'synced') {
+                dot.style.backgroundColor = '#00b894'; 
+            } else {
+                dot.style.backgroundColor = '#ff7675'; 
+            }
+        }
+    </script>
+</body>
+</html>
