@@ -10,7 +10,10 @@
             --primary: #6c5ce7;
             --bg: #f4f7f6;
             --danger: #ff7675;
+            --warning: #fdcb6e;
             --success: #00b894;
+            --text-grey: #636e72;
+            --surface: #ffffff;
         }
 
         body {
@@ -33,7 +36,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            z-index: 1000;
+            z-index: 2000;
         }
 
         #password-input {
@@ -45,87 +48,135 @@
             outline: none;
             width: 250px;
         }
-
         #password-input:focus { border-color: var(--primary); }
 
         /* Main App Container */
         .app-container {
             width: 100%;
-            max-width: 450px;
-            background: white;
+            max-width: 500px;
+            background: var(--surface);
             border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             overflow: hidden;
-            display: none; /* Hidden until unlocked */
+            display: none;
             flex-direction: column;
+            max-height: 85vh;
+            position: relative;
         }
 
+        /* Header */
         .header {
             background: var(--primary);
             color: white;
-            padding: 20px;
-            text-align: center;
-            font-weight: 600;
-            font-size: 1.2rem;
+            padding: 15px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
-        .status-dot {
-            height: 10px; width: 10px;
-            background-color: #fff;
+
+        .header-left h2 { margin: 0; font-size: 1.2rem; }
+        .header-left small { font-size: 0.75rem; opacity: 0.8; cursor: pointer; text-decoration: underline; }
+
+        .header-actions { display: flex; gap: 15px; align-items: center; }
+
+        .icon-btn { cursor: pointer; position: relative; font-size: 1.2rem; }
+        .badge-dot {
+            position: absolute; top: -2px; right: -2px;
+            width: 8px; height: 8px;
+            background: var(--danger);
             border-radius: 50%;
-            opacity: 0.5;
+            display: none;
+            border: 1px solid var(--primary);
         }
 
+        /* Notification Panel */
+        #notif-panel {
+            position: absolute;
+            top: 60px; right: 10px;
+            width: 280px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: none;
+            flex-direction: column;
+            max-height: 300px;
+            overflow-y: auto;
+            border: 1px solid #eee;
+        }
+        #notif-panel.show { display: flex; }
+        
+        .notif-item {
+            padding: 10px 15px;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 0.85rem;
+            color: #444;
+        }
+        .notif-item:last-child { border-bottom: none; }
+        .notif-time { font-size: 0.7rem; color: #999; display: block; margin-top: 3px; }
+        .notif-empty { padding: 20px; text-align: center; color: #999; font-size: 0.8rem; }
+
+        /* Task List */
         ul {
             list-style: none;
             padding: 0;
             margin: 0;
-            max-height: 60vh;
             overflow-y: auto;
-            min-height: 100px;
+            flex-grow: 1;
         }
 
         li {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             padding: 15px 20px;
             border-bottom: 1px solid #eee;
         }
 
-        .task-text {
-            flex-grow: 1;
-            margin: 0 15px;
-            font-size: 16px;
+        .task-content { flex-grow: 1; margin: 0 15px; display: flex; flex-direction: column; }
+        .task-text { font-size: 16px; }
+        
+        .task-meta {
+            font-size: 12px;
+            color: var(--text-grey);
+            margin-top: 4px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
         }
 
-        li.completed .task-text {
-            text-decoration: line-through;
-            color: #aaa;
+        /* Badges */
+        .badge {
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 10px;
+            text-transform: uppercase;
+            color: white;
         }
+        .badge-soon { background-color: var(--warning); color: #444; }
+        .badge-overdue { background-color: var(--danger); }
 
-        button {
-            border: none;
-            background: none;
-            cursor: pointer;
-            font-size: 18px;
-        }
+        li.completed .task-text { text-decoration: line-through; color: #aaa; }
+        li.completed .task-meta { opacity: 0.5; }
 
-        .btn-check { color: #ddd; }
+        button { border: none; background: none; cursor: pointer; font-size: 18px; }
+        .btn-check { color: #ddd; margin-top: 2px; }
         .btn-check:hover { color: var(--success); }
         li.completed .btn-check { color: var(--success); }
-
-        .btn-delete { color: #ddd; margin-left: 10px; }
+        .btn-delete { color: #ddd; margin-left: 10px; margin-top: 2px; }
         .btn-delete:hover { color: var(--danger); }
 
+        /* Input Area */
         .input-area {
             display: flex;
+            flex-direction: column;
             border-top: 2px solid #eee;
             padding: 15px;
             background: white;
+            gap: 10px;
         }
+
+        .input-row { display: flex; gap: 10px; }
 
         #new-task {
             flex-grow: 1;
@@ -137,17 +188,43 @@
             outline: none;
         }
 
+        #deadline-input {
+            border: 1px solid #ddd;
+            background: #f0f2f5;
+            padding: 5px 10px;
+            border-radius: 10px;
+            font-family: inherit;
+            color: #555;
+            font-size: 12px;
+            width: 140px;
+        }
+
         #add-btn {
             background: var(--primary);
             color: white;
-            width: 40px;
-            height: 40px;
+            width: 40px; height: 40px;
             border-radius: 50%;
-            margin-left: 10px;
             display: flex;
-            align-items: center;
-            justify-content: center;
+            align-items: center; justify-content: center;
             font-size: 20px;
+            flex-shrink: 0;
+            transition: transform 0.2s;
+        }
+        #add-btn:active { transform: scale(0.9); }
+        
+        /* Notify Group Button */
+        .notify-btn {
+            background: #55efc4; color: #00b894;
+            font-size: 12px; border: 1px solid #00b894;
+            padding: 5px 10px; border-radius: 15px;
+            font-weight: bold; cursor: pointer; margin-left: auto;
+        }
+        .notify-btn:hover { background: #00b894; color: white; }
+
+        .status-dot {
+            height: 10px; width: 10px;
+            background-color: #eee;
+            border-radius: 50%;
         }
     </style>
 </head>
@@ -162,16 +239,38 @@
 
     <div class="app-container" id="app">
         <div class="header">
-            <span id="header-title">To-Do List</span>
-            <div class="status-dot" id="sync-status" title="Sync Status"></div>
+            <div class="header-left">
+                <h2 id="header-title">To-Do List</h2>
+                <small id="perm-btn" onclick="requestPermission()">Enable Notifications 🔔</small>
+            </div>
+            
+            <div class="header-actions">
+                <div class="status-dot" id="sync-status" title="Sync Status"></div>
+                
+                <div class="icon-btn" onclick="toggleNotifPanel()">
+                    📬
+                    <div class="badge-dot" id="notif-badge"></div>
+                </div>
+            </div>
         </div>
+
+        <div id="notif-panel">
+            <div class="notif-empty">No notifications yet</div>
+        </div>
+        
         <ul id="todo-list">
             <li style="color:#999; text-align:center; padding:20px;">Loading tasks...</li>
         </ul>
         
         <div class="input-area" id="input-area">
-            <input type="text" id="new-task" placeholder="Add a new task..." onkeypress="handleEnter(event)">
-            <button id="add-btn" onclick="addTask()">+</button>
+            <div class="input-row">
+                <input type="text" id="new-task" placeholder="Add a new task..." onkeypress="handleEnter(event)">
+                <button id="add-btn" onclick="addTask()">+</button>
+            </div>
+            <div class="input-row" style="align-items: center;">
+                <button class="notify-btn" onclick="sendBroadcast()" title="Send alert to everyone">📢 Ping Group</button>
+                <input type="datetime-local" id="deadline-input">
+            </div>
         </div>
     </div>
 
@@ -181,33 +280,33 @@
         // ==========================================
         const BIN_ID = '697ee696d0ea881f40980e9f'; 
         const API_KEY = '$2a$10$RGWtPomPQWyJ18.hgX4ccuczNKGEmn3A82c//DYppkADrFYHIWArW';
-﻿
         const BASE_URL = `https://api.jsonbin.io/v3/b/${BIN_ID}`;
 
-        // Passwords
         const MASTER_PASS = "meowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmeowmoew";
         const GUEST_PASS = "bunnypair";
 
         // ==========================================
-        // 2. INITIALIZATION
+        // 2. STATE & INITIALIZATION
         // ==========================================
-        let todos = [];
-        let userMode = 'guest'; // 'guest' or 'admin'
+        let dataStore = { items: [], broadcast: null }; // New Data Structure
+        let userMode = 'guest';
+        let notifiedDeadlines = new Set(); // Runtime cache to avoid duplicate alerts
+        
+        // Polling Interval (Check every 60 seconds)
+        setInterval(silentSync, 60000);
 
-        // Check if already logged in this session
-        const storedMode = sessionStorage.getItem('userMode');
-        if (storedMode) {
-            userMode = storedMode;
+        // Check login on load
+        if (sessionStorage.getItem('userMode')) {
+            userMode = sessionStorage.getItem('userMode');
             unlockApp();
         }
 
         // ==========================================
-        // 3. FUNCTIONS
+        // 3. CORE FUNCTIONS
         // ==========================================
 
         function checkPassword() {
             const input = document.getElementById('password-input').value;
-            
             if (input === MASTER_PASS) {
                 userMode = 'admin';
                 sessionStorage.setItem('userMode', 'admin');
@@ -225,87 +324,187 @@
             document.getElementById('login-overlay').style.display = 'none';
             document.getElementById('app').style.display = 'flex';
             
-            // Adjust UI based on permissions
             if (userMode === 'guest') {
-                document.getElementById('input-area').style.display = 'none'; // Hide add bar
-                document.getElementById('header-title').innerText = "To-Do (View Only)";
+                document.getElementById('input-area').style.display = 'none';
+                document.getElementById('header-title').innerText = "View Only";
             } else {
-                document.getElementById('input-area').style.display = 'flex'; // Show add bar
-                document.getElementById('header-title').innerText = "To-Do (Admin)";
+                document.getElementById('input-area').style.display = 'flex';
+                document.getElementById('header-title').innerText = "Admin Mode";
             }
 
-            fetchTodos();
+            if (Notification.permission === 'granted') {
+                document.getElementById('perm-btn').style.display = 'none';
+            }
+
+            renderNotifLog();
+            fetchData(true); // First load
         }
 
-        async function fetchTodos() {
+        // ==========================================
+        // 4. DATA SYNC & POLLING
+        // ==========================================
+
+        async function fetchData(isFirstLoad = false) {
             updateStatus('loading');
             try {
                 const response = await fetch(BASE_URL + '/latest', {
                     headers: { 'X-Master-Key': API_KEY }
                 });
-                const data = await response.json();
-                todos = Array.isArray(data.record) ? data.record : [];
+                const json = await response.json();
+                let serverData = json.record;
+
+                // --- MIGRATION LOGIC ---
+                // If old format (Array), convert to new Object format
+                if (Array.isArray(serverData)) {
+                    serverData = { items: serverData, broadcast: null };
+                    // We don't save immediately to avoid race conditions, 
+                    // we just treat it as new format locally.
+                    // Next save will fix it on server.
+                }
+                
+                // --- NOTIFICATION TRIGGERS ---
+                if (!isFirstLoad) {
+                    checkDiffs(dataStore, serverData);
+                }
+
+                dataStore = serverData;
                 renderList();
                 updateStatus('synced');
             } catch (error) {
-                console.error("Error fetching:", error);
-                alert("Could not load list.");
+                console.error("Fetch Error", error);
                 updateStatus('error');
             }
         }
 
-        async function saveTodos() {
+        async function saveData() {
             updateStatus('saving');
-            renderList(); // Optimistic update
-            
+            renderList(); // Optimistic render
             try {
                 await fetch(BASE_URL, {
                     method: 'PUT',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-Master-Key': API_KEY
-                    },
-                    body: JSON.stringify(todos)
+                    headers: { 'Content-Type': 'application/json', 'X-Master-Key': API_KEY },
+                    body: JSON.stringify(dataStore)
                 });
                 updateStatus('synced');
             } catch (error) {
-                console.error("Error saving:", error);
-                alert("Failed to save changes!");
+                console.error("Save Error", error);
                 updateStatus('error');
             }
         }
 
-        function addTask() {
-            if (userMode !== 'admin') return; // Security check
+        // Called automatically by setInterval
+        function silentSync() {
+            fetchData(false); // false means "check for changes and notify"
+        }
 
-            const input = document.getElementById('new-task');
-            const text = input.value.trim();
-            if (text) {
-                todos.push({ text: text, done: false });
-                input.value = '';
-                saveTodos();
+        // ==========================================
+        // 5. NOTIFICATION LOGIC
+        // ==========================================
+
+        function requestPermission() {
+            Notification.requestPermission().then(p => {
+                if (p === "granted") document.getElementById('perm-btn').style.display = 'none';
+            });
+        }
+
+        function sendBroadcast() {
+            if (!confirm("Send 'Check the list' notification to everyone?")) return;
+            dataStore.broadcast = {
+                id: Date.now(),
+                msg: "Admin Update: Check the list!"
+            };
+            saveData();
+            alert("Ping sent!");
+        }
+
+        function triggerNotification(title, body) {
+            // 1. Browser Notification
+            if (Notification.permission === "granted") {
+                new Notification(title, { body: body });
             }
+            
+            // 2. Add to In-App Log
+            const log = JSON.parse(localStorage.getItem('myNotifs')) || [];
+            log.unshift({
+                title: title,
+                body: body,
+                time: new Date().toLocaleTimeString(),
+                read: false
+            });
+            localStorage.setItem('myNotifs', JSON.stringify(log));
+            
+            // 3. Update UI
+            renderNotifLog();
+            document.getElementById('notif-badge').style.display = 'block';
         }
 
-        function toggleDone(index) {
-            // Both Guest and Admin can toggle checkmarks
-            todos[index].done = !todos[index].done;
-            saveTodos();
+        // Compare old state vs new state to decide if we should ping
+        function checkDiffs(oldData, newData) {
+            // 1. New Tasks?
+            if (newData.items.length > oldData.items.length) {
+                const diff = newData.items.length - oldData.items.length;
+                triggerNotification("New Activity", `${diff} new task(s) added.`);
+            }
+
+            // 2. Admin Broadcast?
+            // We store the last received broadcast ID in localStorage
+            const lastCastId = localStorage.getItem('lastBroadcastId');
+            if (newData.broadcast && newData.broadcast.id != lastCastId) {
+                triggerNotification("Alert", newData.broadcast.msg);
+                localStorage.setItem('lastBroadcastId', newData.broadcast.id);
+            }
+
+            // 3. Deadlines (Check 1h warning)
+            newData.items.forEach(task => {
+                if (!task.done && task.deadline) {
+                    const due = new Date(task.deadline);
+                    const now = new Date();
+                    const diffMs = due - now;
+                    const taskKey = task.text + task.deadline; // Unique ID proxy
+
+                    // Notify if within 1 hour (3600000ms) and positive
+                    if (diffMs > 0 && diffMs < 3600000 && !notifiedDeadlines.has(taskKey)) {
+                        triggerNotification("Due Soon", `"${task.text}" is due in < 1 hour.`);
+                        notifiedDeadlines.add(taskKey); // Don't notify again this session
+                    }
+                }
+            });
         }
 
-        function removeTask(index) {
-            if (userMode !== 'admin') return; // Security check
-            todos.splice(index, 1);
-            saveTodos();
+        // ==========================================
+        // 6. UI RENDERERS
+        // ==========================================
+
+        function renderNotifLog() {
+            const log = JSON.parse(localStorage.getItem('myNotifs')) || [];
+            const panel = document.getElementById('notif-panel');
+            
+            if (log.length === 0) {
+                panel.innerHTML = '<div class="notif-empty">No notifications</div>';
+                return;
+            }
+
+            panel.innerHTML = log.map(n => `
+                <div class="notif-item">
+                    <strong>${n.title}</strong>: ${n.body}
+                    <span class="notif-time">${n.time}</span>
+                </div>
+            `).join('');
         }
 
-        function handleEnter(e) {
-            if (e.key === 'Enter') addTask();
+        function toggleNotifPanel() {
+            const panel = document.getElementById('notif-panel');
+            panel.classList.toggle('show');
+            // Clear badge when opened
+            if (panel.classList.contains('show')) {
+                document.getElementById('notif-badge').style.display = 'none';
+            }
         }
 
         function renderList() {
             const list = document.getElementById('todo-list');
             list.innerHTML = '';
+            const todos = dataStore.items || [];
 
             if (todos.length === 0) {
                 list.innerHTML = '<li style="color:#ccc; justify-content:center;">No tasks yet!</li>';
@@ -316,16 +515,30 @@
                 const li = document.createElement('li');
                 if (todo.done) li.classList.add('completed');
 
-                // Determine if delete button should be shown
+                // Deadline HTML
+                let deadlineHtml = '';
+                if (todo.deadline && !todo.done) {
+                    const dateObj = new Date(todo.deadline);
+                    const now = new Date();
+                    const diffMs = dateObj - now;
+                    const diffHrs = diffMs / 3600000;
+                    const dateStr = dateObj.toLocaleDateString(undefined, { month:'short', day:'numeric', hour:'2-digit', minute:'2-digit' });
+
+                    if (diffMs < 0) deadlineHtml = `<span class="badge badge-overdue">Overdue: ${dateStr}</span>`;
+                    else if (diffHrs < 24) deadlineHtml = `<span class="badge badge-soon">Due Soon: ${dateStr}</span>`;
+                    else deadlineHtml = `<span>Due: ${dateStr}</span>`;
+                }
+
                 const deleteBtn = userMode === 'admin' 
                     ? `<button class="btn-delete" onclick="removeTask(${index})">&#10005;</button>` 
                     : '';
 
                 li.innerHTML = `
-                    <button class="btn-check" onclick="toggleDone(${index})">
-                        ${todo.done ? '&#10003;' : '&#9711;'} 
-                    </button>
-                    <span class="task-text">${todo.text}</span>
+                    <button class="btn-check" onclick="toggleDone(${index})">${todo.done ? '&#10003;' : '&#9711;'}</button>
+                    <div class="task-content">
+                        <span class="task-text">${todo.text}</span>
+                        <div class="task-meta">${deadlineHtml}</div>
+                    </div>
                     ${deleteBtn}
                 `;
                 list.appendChild(li);
@@ -334,14 +547,46 @@
 
         function updateStatus(state) {
             const dot = document.getElementById('sync-status');
-            if (state === 'loading' || state === 'saving') {
-                dot.style.backgroundColor = '#f1c40f'; 
-            } else if (state === 'synced') {
-                dot.style.backgroundColor = '#00b894'; 
-            } else {
-                dot.style.backgroundColor = '#ff7675'; 
+            if (state === 'loading' || state === 'saving') dot.style.backgroundColor = '#fdcb6e';
+            else if (state === 'synced') dot.style.backgroundColor = '#00b894';
+            else dot.style.backgroundColor = '#ff7675';
+        }
+
+        // ==========================================
+        // 7. TASK ACTIONS
+        // ==========================================
+
+        function addTask() {
+            if (userMode !== 'admin') return;
+            const input = document.getElementById('new-task');
+            const dateInput = document.getElementById('deadline-input');
+            const text = input.value.trim();
+
+            if (text) {
+                dataStore.items.push({ 
+                    text: text, 
+                    done: false,
+                    deadline: dateInput.value || null
+                });
+                input.value = '';
+                dateInput.value = '';
+                saveData();
             }
         }
+
+        function toggleDone(index) {
+            dataStore.items[index].done = !dataStore.items[index].done;
+            saveData();
+        }
+
+        function removeTask(index) {
+            if (userMode !== 'admin') return;
+            dataStore.items.splice(index, 1);
+            saveData();
+        }
+
+        function handleEnter(e) { if (e.key === 'Enter') addTask(); }
+
     </script>
 </body>
 </html>
