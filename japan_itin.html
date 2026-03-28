@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Japan Trip — Mika & Ansel · May 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #faf9f6; --bg2: #f3f1ec; --bg3: #ece9e2;
+    --border: rgba(0,0,0,0.10); --border2: rgba(0,0,0,0.20);
+    --text: #1a1917; --text2: #6b6860; --text3: #9e9b94;
+    --accent: #b85c3a;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#1a1917; --bg2:#222220; --bg3:#2a2926; --border:rgba(255,255,255,0.09); --border2:rgba(255,255,255,0.18); --text:#e8e5de; --text2:#a09d96; --text3:#6b6860; --accent:#d97a56; }
+    .tokyo-h  { background:#1c1a36 !important; color:#a8a2e8 !important; }
+    .hakone-h { background:#0d1e0a !important; color:#8dd9b8 !important; }
+    .kyoto-h  { background:#091d15 !important; color:#4dc49d !important; }
+    .osaka-h  { background:#260e06 !important; color:#ec9070 !important; }
+    .tf   { background:#260e06 !important; color:#ec9070 !important; }
+    .tc   { background:#1c1a36 !important; color:#a8a2e8 !important; }
+    .ts2  { background:#081a2c !important; color:#72acdc !important; }
+    .tn   { background:#111110 !important; color:#b0ada6 !important; }
+    .tb   { background:#1e1200 !important; color:#fac060 !important; }
+    .tbu  { background:#091d15 !important; color:#4dc49d !important; }
+    .tcafe { background:#1a1815 !important; color:#b4b2a9 !important; }
+    .hpill { background:#222220 !important; color:#a09d96 !important; border-color:rgba(255,255,255,0.12) !important; }
+    .hpill.top { color:#e8e5de !important; border-color:rgba(255,255,255,0.25) !important; }
+    .booking-note { background:#1e1200 !important; border-color:#6b3a05 !important; color:#fac060 !important; }
+    .rec-section { background:#1e1c18 !important; border-color:rgba(255,255,255,0.08) !important; }
+    .rec-city-label { color:#a09d96 !important; }
+    .rec-card { background:#252320 !important; border-color:rgba(255,255,255,0.08) !important; }
+    .rec-card-name { color:#e8e5de !important; }
+    .trans-section { background:#1a1712 !important; }
+    .trans-leg { border-color:rgba(255,255,255,0.1) !important; }
+    .trans-bullet { background:#d97a56 !important; }
+    .section-head { border-color:rgba(255,255,255,0.1) !important; }
+  }
+  body { font-family:var(--font-body); background:var(--bg); color:var(--text); padding:28px 16px 64px; max-width:780px; margin:0 auto; line-height:1.55; font-size:14px; }
+
+  .masthead { margin-bottom:32px; padding-bottom:20px; border-bottom:1px solid var(--border); }
+  .masthead h1 { font-family:var(--font-display); font-size:26px; font-weight:400; letter-spacing:-0.3px; color:var(--text); margin-bottom:4px; }
+  .masthead h1 em { font-style:italic; color:var(--accent); }
+  .subtitle { font-size:12px; color:var(--text3); letter-spacing:.04em; }
+
+  /* NAV TABS */
+  .nav-tabs { display:flex; gap:6px; margin-bottom:24px; flex-wrap:wrap; }
+  .nav-tab { font-size:11px; font-weight:500; padding:5px 12px; border-radius:20px; border:1px solid var(--border2); background:var(--bg); color:var(--text2); cursor:pointer; text-decoration:none; transition:all .15s; }
+  .nav-tab:hover { background:var(--bg3); }
+  .nav-tab.active { background:var(--text); color:var(--bg); border-color:var(--text); }
+
+  /* CITY HEADERS */
+  .city-header { display:flex; align-items:center; gap:10px; padding:10px 14px; border-radius:10px; margin-bottom:10px; margin-top:24px; }
+  .city-label { font-size:14px; font-weight:500; font-family:var(--font-display); }
+  .city-sub { font-size:11px; opacity:0.65; margin-left:auto; }
+  .tokyo-h  { background:#EEEDFE; color:#3C3489; }
+  .hakone-h { background:#EAF3DE; color:#27500A; }
+  .kyoto-h  { background:#E1F5EE; color:#085041; }
+  .osaka-h  { background:#FAECE7; color:#711813; }
+
+  /* DAYS */
+  .day { border:0.5px solid var(--border); border-radius:10px; margin-bottom:8px; overflow:hidden; }
+  .day-title { display:flex; align-items:center; gap:10px; padding:9px 14px; background:var(--bg2); border-bottom:0.5px solid var(--border); flex-wrap:wrap; }
+  .day-date { font-size:11px; font-weight:500; color:var(--text3); min-width:64px; }
+  .day-name { font-size:13px; font-weight:500; color:var(--text); flex:1; min-width:180px; }
+  .day-vibe { font-size:11px; color:var(--text3); white-space:nowrap; font-style:italic; }
+  .slots { padding:10px 14px; display:flex; flex-direction:column; gap:8px; }
+  .slot { display:flex; gap:10px; }
+  .slot-time { font-size:11px; color:var(--text3); min-width:72px; padding-top:2px; font-weight:500; flex-shrink:0; }
+  .slot-main { font-size:13px; color:var(--text); line-height:1.4; }
+  .slot-detail { font-size:11.5px; color:var(--text2); margin-top:3px; line-height:1.55; }
+
+  /* HOTEL BADGE */
+  .hotel-badge { display:inline-flex; align-items:center; gap:4px; font-size:10.5px; background:var(--bg3); border:0.5px solid var(--border2); border-radius:6px; padding:2px 7px; margin-top:4px; color:var(--text2); }
+  .hotel-badge .dot { width:6px; height:6px; border-radius:50%; background:#4caf7d; flex-shrink:0; }
+
+  /* TAGS */
+  .tag { display:inline-block; font-size:10px; padding:1px 6px; border-radius:20px; margin-right:3px; font-weight:500; }
+  .tf   { background:#FAECE7; color:#993C1D; }
+  .tc   { background:#EEEDFE; color:#3C3489; }
+  .ts2  { background:#E6F1FB; color:#0C447C; }
+  .tn   { background:#2C2C2A; color:#D3D1C7; }
+  .tb   { background:#FAEEDA; color:#633806; }
+  .tbu  { background:#E1F5EE; color:#085041; }
+  .tcafe { background:#F1EFE8; color:#444441; }
+
+  /* TRANSIT */
+  .transit { background:var(--bg2); border:0.5px dashed var(--border2); border-radius:8px; padding:8px 14px; margin-bottom:8px; margin-top:8px; font-size:12px; color:var(--text2); }
+
+  /* SECTION HEADS */
+  .section-head { display:flex; align-items:center; gap:12px; margin:36px 0 14px; padding-bottom:10px; border-bottom:1px solid var(--border); }
+  .section-head h2 { font-family:var(--font-display); font-size:19px; font-weight:400; color:var(--text); }
+  .section-head span { font-size:11px; color:var(--text3); font-style:italic; }
+
+  /* HOTELS */
+  .hotel-city { font-size:11px; font-weight:500; color:var(--text3); text-transform:uppercase; letter-spacing:.07em; margin:16px 0 6px; }
+  .hotel-card { background:var(--bg2); border:0.5px solid var(--border); border-radius:10px; padding:10px 14px; margin-bottom:6px; }
+  .hotel-name-row { font-size:13px; font-weight:500; color:var(--text); margin-bottom:6px; }
+  .hotel-picks { display:flex; flex-wrap:wrap; gap:5px; }
+  .hpill { font-size:11px; padding:2px 8px; border-radius:20px; background:var(--bg); border:0.5px solid var(--border); color:var(--text2); cursor:default; }
+  .hpill.top { border-color:var(--border2); color:var(--text); }
+
+  /* FOOD RECS SECTION */
+  .rec-section { margin-bottom:20px; background:var(--bg2); border-radius:12px; padding:14px 16px; border:0.5px solid var(--border); }
+  .rec-city-label { font-size:11px; font-weight:500; text-transform:uppercase; letter-spacing:.07em; color:var(--text3); margin-bottom:10px; }
+  .rec-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(220px,1fr)); gap:8px; }
+  .rec-card { background:var(--bg); border:0.5px solid var(--border); border-radius:8px; padding:9px 11px; }
+  .rec-card-name { font-size:12.5px; font-weight:500; color:var(--text); margin-bottom:3px; }
+  .rec-card-type { font-size:10.5px; color:var(--text3); margin-bottom:4px; }
+  .rec-card-note { font-size:11.5px; color:var(--text2); line-height:1.5; }
+  .rec-tags { margin-bottom:5px; }
+
+  /* TRANSPORT SECTION */
+  .trans-section { background:var(--bg2); border-radius:12px; padding:18px 18px; margin-bottom:20px; }
+  .trans-intro { font-size:13px; color:var(--text2); line-height:1.7; margin-bottom:18px; }
+  .trans-leg { border-left:2px solid var(--border2); padding:0 0 16px 16px; margin-bottom:0; position:relative; }
+  .trans-leg:last-child { border-left-color:transparent; padding-bottom:0; }
+  .trans-bullet { position:absolute; left:-5px; top:3px; width:8px; height:8px; border-radius:50%; background:var(--accent); }
+  .trans-leg-title { font-size:13px; font-weight:500; color:var(--text); margin-bottom:4px; }
+  .trans-leg-body { font-size:12px; color:var(--text2); line-height:1.65; }
+  .trans-leg-body strong { color:var(--text); font-weight:500; }
+  .fare { display:inline-block; font-size:11px; background:var(--bg3); border-radius:4px; padding:1px 6px; margin:2px 0; color:var(--text); font-weight:500; }
+
+  .booking-note { margin-top:28px; background:#FDF5E9; border:0.5px solid #b8710a; border-radius:10px; padding:13px 16px; font-size:12px; color:#412402; line-height:1.65; }
+  .booking-note strong { font-weight:500; display:block; margin-bottom:5px; font-size:13px; }
+
+  .section-divider { height:1px; background:var(--border); margin:32px 0; }
+
+  /* PASS COMPARISON */
+  .pass-compare { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:12px 0; }
+  .pass-card { background:var(--bg); border:0.5px solid var(--border); border-radius:8px; padding:10px 12px; }
+  .pass-card h4 { font-size:12px; font-weight:500; color:var(--text); margin-bottom:4px; }
+  .pass-card p { font-size:11.5px; color:var(--text2); line-height:1.55; }
+  .pass-card.recommended { border-color:var(--accent); }
+  .pass-card.recommended h4::after { content:" ✓ recommended"; font-size:10px; color:var(--accent); font-weight:400; }
+  @media(max-width:500px){ .pass-compare { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <h1>Japan — <em>Mika & Ansel</em></h1>
+  <p class="subtitle">May 23 – May 31, 2026 &nbsp;·&nbsp; Tokyo · Hakone · Kyoto · Osaka</p>
+</div>
+
+<!-- ===== ITINERARY ===== -->
+
+<div class="city-header tokyo-h">
+  <span class="city-label">Tokyo</span>
+  <span class="city-sub">May 23–25 · 2 nights · Shinjuku</span>
+</div>
+
+<div class="day">
+  <div class="day-title">
+    <span class="day-date">Sat May 23</span>
+    <span class="day-name">Arrival — first night wander</span>
+    <span class="day-vibe">easy landing</span>
+  </div>
+  <div class="slots">
+    <div class="slot"><span class="slot-time">~8pm land</span><div>
+      <div class="slot-main">Narita Express → Shinjuku (~90 min), check in, grab Suica cards at airport</div>
+      <div class="slot-detail">
+        <div class="hotel-badge"><span class="dot"></span>Staying: Shinjuku hotel (confirmed ¥134/night)</div>
+        Stock up at 7-Eleven in the station. Get yen from the ATM (7-Bank ATMs at airport accept foreign cards).
+      </div>
+    </div></div>
+    <div class="slot"><span class="slot-time">10pm–late</span><div><div class="slot-main">Shibuya Crossing → Nonbei Yokocho → Omoide Yokocho (Memory Lane)</div><div class="slot-detail"><span class="tag tn">night walk</span> Nonbei is lantern-lit tiny bars. Omoide Yokocho is smoky yakitori stalls — great first-night snack and drink.</div></div></div>
+  </div>
+</div>
+
+<div class="day">
+  <div class="day-title">
+    <span class="day-date">Sun May 24</span>
+    <span class="day-name">Kamakura + Enoshima day trip → Golden Gai night</span>
+    <span class="day-vibe">coastal day trip + Tokyo evening</span>
+  </div>
+  <div class="slots">
+    <div class="slot"><span class="slot-time">7:30am</span><div><div class="slot-main">Shinjuku → Kamakura (JR Shonan-Shinjuku Line, ~1hr direct)</div><div class="slot-detail">Grab an onigiri at the station konbini. Sit on the right side for coastal glimpses. <span class="fare">~¥940/person — use Suica, covered by JR</span></div></div></div>
+    <div class="slot"><span class="slot-time">8:45–10am</span><div><div class="slot-main">Kotoku-in — the Great Buddha (Daibutsu)</div><div class="slot-detail"><span class="tag tbu">Buddhist</span> 13-meter outdoor bronze Buddha, 1252 CE. You can go inside it.</div></div></div>
+    <div class="slot"><span class="slot-time">10–11:30am</span><div><div class="slot-main">Hasedera Temple — hilltop ocean views + Kannon statue</div><div class="slot-detail"><span class="tag tbu">Buddhist</span> Sweeping views over Sagami Bay. Giant gilded 11-headed Kannon inside. Cave shrine below worth doing.</div></div></div>
+    <div class="slot"><span class="slot-time">11:30am–1pm</span><div><div class="slot-main">Komachi-dori street + shirasu rice bowl lunch</div><div class="slot-detail"><span class="tag tf">food</span> Shirasu (whitebait) rice bowls are the Kamakura specialty — fresh from the bay. Local crafts and matcha shops on the covered street.</div></div></div>
+    <div class="slot"><span class="slot-time">1–1:30pm</span><div><div class="slot-main">Daibutsu Hiking Trail — short forested ridge walk</div><div class="slot-detail">Not strenuous. Connects to the Enoden tram line at the end.</div></div></div>
+    <div class="slot"><span class="slot-time">1:30–2pm</span><div><div class="slot-main">Enoden tram → Enoshima (~25 min along the coast)</div><div class="slot-detail">Sit on the left side — the stretch where the tiny tram passes inches from the beach is one of those Japan moments that doesn't look real. <span class="fare">~¥260 — Suica</span></div></div></div>
+    <div class="slot"><span class="slot-time">2–4:30pm</span><div><div class="slot-main">Enoshima island — shrine climb + Iwaya sea caves</div><div class="slot-detail"><span class="tag tbu">Shinto</span> Walk the bridge, climb the shrine complex. Iwaya Caves at the far end — walk through with candles, genuinely atmospheric.</div></div></div>
+    <div class="slot"><span class="slot-time">4:30–5:30pm</span><div><div class="slot-main">Sit on Katase-Enoshima beach</div><div class="slot-detail">Late May sunset ~6:30pm. Clear days: Fuji visible to the northwest — the classic postcard shot.</div></div></div>
+    <div class="slot"><span class="slot-time">6–7pm</span><div><div class="slot-main">Casual seafood dinner in Enoshima harbor</div><div class="slot-detail"><span class="tag tf">dinner</span> Fresh shirasu, grilled fish. No reservation needed.</div></div></div>
+    <div class="slot"><span class="slot-time">7–8:30pm</span><div><div class="slot-main">Fujisawa/Enoshima → Shinjuku (~1hr) <span class="fare">~¥640 — Suica/JR</span></div></div></div>
+    <div class="slot"><span class="slot-time">9pm–late</span><div><div class="slot-main">Golden Gai night walk</div><div class="slot-detail"><span class="tag tn">night walk</span> 200+ tiny bars, each fits ~6 people. Walk in wherever looks interesting.</div></div></div>
+  </div>
+</div>
+
+<div class="day">
+  <div class="day-title">
+    <span class="day-date">Mon May 25</span>
+    <span class="day-name">East + West Tokyo — Senso-ji · Skytree · TNM · Yanaka · Meiji · Harajuku · Ginza · Pokémon · Omakase</span>
+    <span class="day-vibe">the big day</span>
+  </div>
+  <div class="slots">
+    <div class="slot"><span class="slot-time">6:45–7:45am</span><div><div class="slot-main">Senso-ji at dawn</div><div class="slot-detail"><span class="tag tbu">Buddhist</span> Almost no one there before 8am. Light incense, walk the grounds in quiet. <span class="fare">~20 min subway from Shinjuku (Oedo Line → Asakusa)</span></div></div></div>
+    <div class="slot"><span class="slot-time">8–9am</span><div><div class="slot-main">Tokyo Skytree — Tembo Deck + Galleria</div><div class="slot-detail"><span class="tag tb">book ahead</span> Right next to Senso-ji. 350m deck + 450m glass-floor Galleria. Morning = clearest views, best Fuji chance.</div></div></div>
+    <div class="slot"><span class="slot-time">9–9:30am</span><div><div class="slot-main">Nakamise snacks + quick Asakusa browse</div></div></div>
+    <div class="slot"><span class="slot-time">10am–12pm</span><div><div class="slot-main">Tokyo National Museum (Ueno)</div><div class="slot-detail"><span class="tag tc">culture</span> World's largest Japanese art collection. Buddhist sculpture wing first — it's exceptional. <span class="fare">~15 min walk from Asakusa</span></div></div></div>
+    <div class="slot"><span class="slot-time">12–1:30pm</span><div><div class="slot-main">Yanaka neighborhood — lunch + slow wander</div><div class="slot-detail">Old shitamachi Tokyo, 15 min walk from Ueno. Temple graveyards, cats, indie coffee. Yanaka Coffee roastery is a great stop.</div></div></div>
+    <div class="slot"><span class="slot-time">2–3:30pm</span><div><div class="slot-main">Meiji Jingu shrine + forested walk</div><div class="slot-detail"><span class="tag tc">culture</span> ~25 min from Yanaka by train (Nippori → Harajuku). Towering cedar torii gates.</div></div></div>
+    <div class="slot"><span class="slot-time">3:30–4:30pm</span><div><div class="slot-main">Takeshita Street → Omotesando + Uniqlo flagship (3 floors)</div><div class="slot-detail"><span class="tag ts2">shop</span></div></div></div>
+    <div class="slot"><span class="slot-time">4:30–5pm</span><div><div class="slot-main">% Arabica Omotesando or Koffee Mameya</div><div class="slot-detail"><span class="tag tcafe">cafe</span> Koffee Mameya is in a tiny alley off Omotesando — worth finding for Ansel especially.</div></div></div>
+    <div class="slot"><span class="slot-time">5–6:30pm</span><div><div class="slot-main">Ginza — GINZA SIX + Mikimoto pearls + Kyotokimonoichiba kimono</div><div class="slot-detail"><span class="tag ts2">shop</span> GINZA SIX free rooftop garden with views. Mikimoto pearl flagship on the main strip.</div></div></div>
+    <div class="slot"><span class="slot-time">6:30–7:15pm</span><div><div class="slot-main">Pokémon Center Mega Tokyo (Ikebukuro)</div><div class="slot-detail"><span class="tag ts2">shop</span> Direct subway from Ginza (~15 min). The flagship.</div></div></div>
+    <div class="slot"><span class="slot-time">7:30pm</span><div><div class="slot-main">Sushi AKA omakase (Shinjuku)</div><div class="slot-detail"><span class="tag tf">dinner</span> <span class="tag tb">book ahead</span> 8-seat Michelin-listed Edomae counter, ~2 hrs. Book weeks ahead via Tableall or Omakase.in.</div></div></div>
+    <div class="slot"><span class="slot-time">10pm–late</span><div><div class="slot-main">Shimokitazawa night wander + late cafe</div><div class="slot-detail"><span class="tag tn">night walk</span> <span class="tag tcafe">cafe</span> 15 min from Shinjuku on the Odakyu line. Record shops, vintage, live music, late cafes.</div></div></div>
+  </div>
+</div>
+
+<div class="transit">🚄 Tue May 26 morning — Shinjuku → Hakone via Odakyu Romancecar (~80 min · <strong>not JR Pass</strong> · buy Hakone Freepass from Shinjuku + Romancecar seat surcharge separately)</div>
+
+<div class="city-header hakone-h">
+  <span class="city-label">Hakone</span>
+  <span class="city-sub">May 26 · 1 ryokan night · Gora or Lake Ashi</span>
+</div>
+
+<div class="day">
+  <div class="day-title">
+    <span class="day-date">Tue May 26</span>
+    <span class="day-name">Hakone loop + ryokan onsen night</span>
+    <span class="day-vibe">scenic + slow</span>
+  </div>
+  <div class="slots">
+    <div class="slot"><span class="slot-time">10am arrive</span><div>
+      <div class="slot-main">Hakone Tozan Railway → Gora</div>
+      <div class="slot-detail">Slowest mountain railway in Japan — zigzag switchbacks up the hillside. All covered by Hakone Freepass.
+        <div class="hotel-badge"><span class="dot"></span>Staying: Ryokan suite (Expedia · $265, confirmed)</div>
+      </div>
+    </div></div>
+    <div class="slot"><span class="slot-time">11am–1pm</span><div><div class="slot-main">Hakone Open Air Museum</div><div class="slot-detail"><span class="tag tc">culture</span> Massive sculpture park, Picasso pavilion, incredible mountain backdrop. Freepass discount.</div></div></div>
+    <div class="slot"><span class="slot-time">1–2:30pm</span><div><div class="slot-main">Cable car → Owakudani volcanic valley</div><div class="slot-detail">Active sulfur vents. Kuro tamago (black eggs hard-boiled in volcanic springs) — eat one for good luck. All on Freepass.</div></div></div>
+    <div class="slot"><span class="slot-time">2:30–4pm</span><div><div class="slot-main">Lake Ashi cruise → Moto-Hakone lakeside cedar torii walk</div><div class="slot-detail">Pirate ship cruise across the lake — on Freepass. Clear day = Fuji views. Lakeside torii avenue is beautiful.</div></div></div>
+    <div class="slot"><span class="slot-time">4pm</span><div><div class="slot-main">Ryokan check-in → yukata → private onsen</div></div></div>
+    <div class="slot"><span class="slot-time">7pm</span><div><div class="slot-main">Kaiseki dinner (included at ryokan)</div><div class="slot-detail"><span class="tag tf">dinner</span> Multi-course traditional meal, unhurried. Usually 1.5–2 hrs.</div></div></div>
+    <div class="slot"><span class="slot-time">After dinner</span><div><div class="slot-main">Night onsen soak + dawn onsen at sunrise</div><div class="slot-detail">Do both — the early morning bath with mountain mist is worth setting an alarm for.</div></div></div>
+  </div>
+</div>
+
+<div class="transit">🚄 Wed May 27 — Odawara → Kyoto Shinkansen (~2h10 · Hikari service · buy individual ticket via SmartEX app · <strong>~¥13,850/person</strong>)</div>
+
+<div class="city-header kyoto-h">
+  <span class="city-label">Kyoto</span>
+  <span class="city-sub">May 27–28 · 2 nights · Kawaramachi</span>
+</div>
+
+<div class="day">
+  <div class="day-title">
+    <span class="day-date">Wed May 27</span>
+    <span class="day-name">Arrive + Fushimi Inari + Gion night + Kamo River</span>
+    <span class="day-vibe">beautiful evening</span>
+  </div>
+  <div class="slots">
+    <div class="slot"><span class="slot-time">12pm arrive</span><div>
+      <div class="slot-main">Check in, lunch at Nishiki Market</div>
+      <div class="slot-detail">
+        <div class="hotel-badge"><span class="dot"></span>Staying: Kawaramachi hotel (¥81–¥114/night, confirmed)</div>
+        <span class="tag tf">food</span> "Kyoto's kitchen" — tamagoyaki, pickles, skewered tofu. Eat as you walk.
+      </div>
+    </div></div>
+    <div class="slot"><span class="slot-time">2–6pm</span><div><div class="slot-main">Fushimi Inari Taisha — full hike to Yotsutsuji</div><div class="slot-detail"><span class="tag tbu">Shinto</span> Do the full ~2.5hr loop. Late afternoon light through the torii is the best version. <span class="fare">~15 min by JR Nara Line from Kyoto Station · ¥180</span></div></div></div>
+    <div class="slot"><span class="slot-time">7–8:30pm</span><div><div class="slot-main">Gion walk → Hanamikoji + Shirakawa canal at night</div><div class="slot-detail"><span class="tag tn">night walk</span> Shirakawa canal lit at night — one of the most beautiful walks in Japan.</div></div></div>
+    <div class="slot"><span class="slot-time">8:30pm</span><div><div class="slot-main">Dinner on Pontocho + kawayuka riverside terrace</div><div class="slot-detail"><span class="tag tf">dinner</span> Kawayuka (wooden terraces over the Kamo River) open in late May — eat outside over the water.</div></div></div>
+    <div class="slot"><span class="slot-time">After dinner</span><div><div class="slot-main">Kamo River sit — combini drink on the bank</div><div class="slot-detail"><span class="tag tn">night walk</span> Couples sit equidistant along the river by unwritten rule. Very Kyoto.</div></div></div>
+  </div>
+</div>
+
+<div class="day">
+  <div class="day-title">
+    <span class="day-date">Thu May 28</span>
+    <span class="day-name">Arashiyama dawn + temples all day + wagyu sukiyaki + Philosopher's Path</span>
+    <span class="day-vibe">packed temple day</span>
+  </div>
+  <div class="slots">
+    <div class="slot"><span class="slot-time">6:30–8am</span><div><div class="slot-main">Arashiyama Bamboo Grove (arrive before 7am)</div><div class="slot-detail">Magical before crowds. <span class="fare">~30 min from Kawaramachi by Hankyu + Randen tram or bus</span></div></div></div>
+    <div class="slot"><span class="slot-time">8–10am</span><div><div class="slot-main">Tenryu-ji gardens → Jojakko-ji temple</div><div class="slot-detail"><span class="tag tbu">Zen Buddhist</span> Tenryu-ji is UNESCO. Jojakko-ji is mossy, quiet, pagoda — almost always empty and genuinely moving.</div></div></div>
+    <div class="slot"><span class="slot-time">10–11am</span><div><div class="slot-main">% Arabica Arashiyama — coffee on the Oi River</div><div class="slot-detail"><span class="tag tcafe">cafe</span> One of the most beautiful cafe locations in the world.</div></div></div>
+    <div class="slot"><span class="slot-time">11am–12pm</span><div><div class="slot-main">Bike rental along the Katsura River</div></div></div>
+    <div class="slot"><span class="slot-time">1–2:30pm</span><div><div class="slot-main">Sanjusangen-do</div><div class="slot-detail"><span class="tag tbu">Buddhist</span> 1,001 golden Kannon statues in a single long wooden hall. One of the most awe-inspiring rooms in Japan.</div></div></div>
+    <div class="slot"><span class="slot-time">3–4:30pm</span><div><div class="slot-main">Kinkaku-ji (Golden Pavilion)</div><div class="slot-detail"><span class="tag tbu">Buddhist</span> Touristy but genuinely stunning. Budget 45 min max.</div></div></div>
+    <div class="slot"><span class="slot-time">5–6:30pm</span><div><div class="slot-main">Kiyomizu-dera + Sannenzaka/Ninenzaka lanes at golden hour</div><div class="slot-detail"><span class="tag tbu">Buddhist</span> The big stage temple. Walk the stone-paved lanes down — matcha soft serve, ceramics, gifts.</div></div></div>
+    <div class="slot"><span class="slot-time">7:30pm</span><div><div class="slot-main">Wagyu Sukiyaki Chikarayama Pontocho — kawayuka riverside terrace</div><div class="slot-detail"><span class="tag tf">dinner</span> <span class="tag tb">book ahead</span> A5 wagyu sukiyaki, staff cooks tableside. Riverside terrace over the Kamo River.</div></div></div>
+    <div class="slot"><span class="slot-time">After dinner</span><div><div class="slot-main">Philosopher's Path night walk</div><div class="slot-detail"><span class="tag tn">night walk</span> Canal walkway, lantern-lit, almost no one there after 9pm. Very quiet and romantic.</div></div></div>
+  </div>
+</div>
+
+<div class="transit">🚄 Fri May 29 morning — Kyoto → Osaka (~15 min Shinkansen Hikari or 30 min JR Rapid Shinkansen · <strong>~¥1,420 JR Rapid (free on Suica/IC card on JR Kyoto Line)</strong> · or ¥2,270 Shinkansen · Rapid is fine)</div>
+
+<div class="city-header osaka-h">
+  <span class="city-label">Osaka</span>
+  <span class="city-sub">May 29–31 · 2 nights · Namba</span>
+</div>
+
+<div class="day">
+  <div class="day-title">
+    <span class="day-date">Fri May 29</span>
+    <span class="day-name">Arrive + Shitennoji + Castle + Kuromon + Dotonbori + Amerika-Mura</span>
+    <span class="day-vibe">history then food energy</span>
+  </div>
+  <div class="slots">
+    <div class="slot"><span class="slot-time">10am arrive</span><div>
+      <div class="slot-main">Check in Namba, drop bags</div>
+      <div class="slot-detail">
+        <div class="hotel-badge"><span class="dot"></span>Staying: Namba hotel (¥105/night + ¥45 breakfast · confirmed)</div>
+      </div>
+    </div></div>
+    <div class="slot"><span class="slot-time">10:30–12pm</span><div><div class="slot-main">Shitennoji Temple</div><div class="slot-detail"><span class="tag tbu">Buddhist</span> Japan's oldest Buddhist temple (593 CE). Calm, almost tourist-free, genuinely sacred. <span class="fare">~15 min subway from Namba</span></div></div></div>
+    <div class="slot"><span class="slot-time">12–2pm</span><div><div class="slot-main">Osaka Castle + museum</div><div class="slot-detail"><span class="tag tc">culture</span> Great Sengoku-period museum inside. Nishinomaru Garden lovely in late May.</div></div></div>
+    <div class="slot"><span class="slot-time">2:30–4pm</span><div><div class="slot-main">Kuromon Ichiba Market food crawl</div><div class="slot-detail"><span class="tag tf">food</span> Oysters, crab claws, wagyu skewers eaten standing. This is the move. <span class="fare">~15 min walk from Castle</span></div></div></div>
+    <div class="slot"><span class="slot-time">4–5:30pm</span><div><div class="slot-main">Den Den Town browse</div><div class="slot-detail"><span class="tag ts2">shop</span> Osaka's Akihabara — electronics and anime, less overwhelming.</div></div></div>
+    <div class="slot"><span class="slot-time">7–9pm</span><div><div class="slot-main">Dotonbori street dinner: takoyaki + okonomiyaki</div><div class="slot-detail"><span class="tag tf">food</span> Aizuya for takoyaki, Mizuno for okonomiyaki. Walk the canal at night — neon on the water is the Osaka postcard.</div></div></div>
+    <div class="slot"><span class="slot-time">9pm–late</span><div><div class="slot-main">Amerika-Mura night walk + late cafe</div><div class="slot-detail"><span class="tag tn">night walk</span> <span class="tag tcafe">cafe</span> Streetwear district, murals, Triangle Park. Cafe Absinthe stays open late.</div></div></div>
+  </div>
+</div>
+
+<div class="day">
+  <div class="day-title">
+    <span class="day-date">Sat May 30</span>
+    <span class="day-name">Nara day trip + Shinsaibashi + Umeda Sky + final wagyu night</span>
+    <span class="day-vibe">day trip + send-off dinner</span>
+  </div>
+  <div class="slots">
+    <div class="slot"><span class="slot-time">8:30–1pm</span><div><div class="slot-main">Nara day trip</div><div class="slot-detail"><span class="tag tbu">Buddhist</span> Kintetsu Namba → Kintetsu Nara, ~40 min, ~¥680. Todai-ji — giant bronze Buddha. Kasuga Grand Shrine. Free-roaming deer that literally bow for crackers.</div></div></div>
+    <div class="slot"><span class="slot-time">1:30–3:30pm</span><div><div class="slot-main">Shinsaibashi covered arcade + last-minute shopping</div><div class="slot-detail"><span class="tag ts2">shop</span> Uniqlo, Loft, Don Quijote for gifts and cosmetics.</div></div></div>
+    <div class="slot"><span class="slot-time">4–5:30pm</span><div><div class="slot-main">Umeda Sky Building — floating observatory at dusk</div><div class="slot-detail">Connected by open-air escalator. One of the more unusual architectural experiences in Japan. <span class="fare">~15 min subway Namba → Umeda</span></div></div></div>
+    <div class="slot"><span class="slot-time">6–7pm</span><div><div class="slot-main">Cafe time before dinner</div><div class="slot-detail"><span class="tag tcafe">cafe</span> % Arabica Shinsaibashi or Cafe de L'Ambre (old school charcoal coffee).</div></div></div>
+    <div class="slot"><span class="slot-time">7:30pm</span><div><div class="slot-main">MAIDO Wagyu Yakiniku (Dotonbori) — final dinner</div><div class="slot-detail"><span class="tag tf">dinner</span> All-you-can-eat A5 wagyu. Cook at the table, high energy. Perfect send-off.</div></div></div>
+    <div class="slot"><span class="slot-time">After dinner</span><div><div class="slot-main">Final Dotonbori canal walk</div><div class="slot-detail"><span class="tag tn">night walk</span> Walk it slowly. Don't go too late — early departure tomorrow.</div></div></div>
+  </div>
+</div>
+
+<div class="day">
+  <div class="day-title">
+    <span class="day-date">Sun May 31</span>
+    <span class="day-name">Osaka → Tokyo → last afternoon → fly home</span>
+    <span class="day-vibe">departure day</span>
+  </div>
+  <div class="slots">
+    <div class="slot"><span class="slot-time">Morning</span><div><div class="slot-main">Last combini breakfast, pack, check out</div></div></div>
+    <div class="slot"><span class="slot-time">By 10am</span><div><div class="slot-main">Shin-Osaka → Tokyo Shinkansen (~2h20) <span class="fare">~¥14,720/person Hikari reserved</span></div><div class="slot-detail">Arrive Tokyo ~12:30pm. Leave bags in a coin locker at Shinjuku Station (¥300–700/day).</div></div></div>
+    <div class="slot"><span class="slot-time">1–4:30pm</span><div><div class="slot-main">Last Tokyo afternoon — Shinjuku or Ginza</div><div class="slot-detail"><span class="tag ts2">browse</span> Last-minute shopping or slow walk. Isetan Shinjuku basement food hall for last gifts.</div></div></div>
+    <div class="slot"><span class="slot-time">~5pm</span><div><div class="slot-main">Shinjuku → Narita via N'EX (~90 min) <span class="fare">~¥3,070/person</span></div><div class="slot-detail">Catch the ~5pm N'EX. Arrive Narita ~6:30pm — plenty of time for a 9:30pm departure.</div></div></div>
+  </div>
+</div>
+
+<!-- ===== HOTELS ===== -->
+<div class="section-head">
+  <h2>Accommodation</h2>
+  <span>confirmed bookings</span>
+</div>
+
+<div class="hotel-city">Tokyo · Shinjuku · May 23–25 (2 nights)</div>
+<div class="hotel-card">
+  <div class="hotel-name-row">Confirmed hotel · ¥134/night · ¥445 total (2 nights)</div>
+  <div class="hotel-picks">
+    <span class="hpill top">Shinjuku · central</span>
+    <span class="hpill">Near Omoide Yokocho + Golden Gai</span>
+    <span class="hpill">Easy Odakyu access for Hakone</span>
+  </div>
+</div>
+
+<div class="hotel-city">Hakone · May 26 (1 night ryokan)</div>
+<div class="hotel-card">
+  <div class="hotel-name-row">Confirmed ryokan suite · $265 total</div>
+  <div class="hotel-picks">
+    <span class="hpill top">Onsen suite included</span>
+    <span class="hpill">Kaiseki dinner + breakfast</span>
+    <span class="hpill">Get there early for afternoon soak</span>
+  </div>
+</div>
+
+<div class="hotel-city">Kyoto · Kawaramachi · May 27–28 (2 nights)</div>
+<div class="hotel-card">
+  <div class="hotel-name-row">Confirmed hotel · ¥81/night · ¥179 total (or ¥114 w/ buffet breakfast)</div>
+  <div class="hotel-picks">
+    <span class="hpill top">Kawaramachi · walkable to Gion + Pontocho</span>
+    <span class="hpill">10 min walk to Fushimi Inari subway</span>
+    <span class="hpill">Consider the buffet — Kyoto breakfast is worth it</span>
+  </div>
+</div>
+
+<div class="hotel-city">Osaka · Namba · May 29–31 (2 nights)</div>
+<div class="hotel-card">
+  <div class="hotel-name-row">Confirmed hotel · ¥105/night · ¥231 total + ¥45×2 breakfast</div>
+  <div class="hotel-picks">
+    <span class="hpill top">Namba · steps from Dotonbori + Kuromon</span>
+    <span class="hpill">Easy Kintetsu Namba line for Nara day trip</span>
+    <span class="hpill">Skip buffet here — eat at Kuromon instead</span>
+  </div>
+</div>
+
+<div class="booking-note">
+  <strong>⏰ Book ahead now — these fill fast</strong>
+  Skytree Tembo Deck (book online, beats the line) · Sushi AKA Shinjuku omakase (weeks ahead via omakase.in or Tableall) · Wagyu Sukiyaki Chikarayama Pontocho (at least 2–3 weeks out) · Romancecar Hakone seat upgrade (buy when you get the Freepass) · Any high-end omakase or shabu-shabu from the rec list below.
+</div>
+
+
+<!-- ===== FOOD RECS ===== -->
+<div class="section-head">
+  <h2>Food & Cafe Recs</h2>
+  <span>by neighborhood — look these up and book ahead where noted</span>
+</div>
+
+<!-- TOKYO -->
+<div class="rec-section">
+  <div class="rec-city-label">🗼 Tokyo — Shinjuku, Shimokitazawa, Ginza, Asakusa</div>
+  <div class="rec-grid">
+
+    <div class="rec-card">
+      <div class="rec-card-name">Sushi Takamitsu (Shibuya/Meguro)</div>
+      <div class="rec-tags"><span class="tag tf">omakase</span><span class="tag tb">book far ahead</span></div>
+      <div class="rec-card-note">One of Tokyo's most acclaimed Edomae counters — reservation-only, nearly impossible to get but try via Tableall. The Kyoto branch (Gion Takamitsu) on Hanamikoji opened 2025 if you can't get Tokyo.</div>
+    </div>
+
+    <div class="rec-card">
+      <div class="rec-card-name">Yoroniku (Ebisu)</div>
+      <div class="rec-tags"><span class="tag tf">wagyu yakiniku</span><span class="tag tb">book ahead</span></div>
+      <div class="rec-card-note">~18-course wagyu yakiniku omakase — chef grills each cut in front of you. Celebratory, lively atmosphere. One of the best single-restaurant meals in Tokyo. ~¥25,000+/person.</div>
+    </div>
+
+    <div class="rec-card">
+      <div class="rec-card-name">Yurakucho Kakida (Shinjuku)</div>
+      <div class="rec-tags"><span class="tag tf">omakase sushi</span></div>
+      <div class="rec-card-note">Trendy counter in Shinjuku doing high-quality omakase with an all-you-can-enjoy option. Very accessible and foreign-visitor friendly. ~¥15,000 dinner. 3 min from Shinjuku south exit.</div>
+    </div>
+
+    <div class="rec-card">
+      <div class="rec-card-name">Nakahara (Roppongi/Azabu)</div>
+      <div class="rec-tags"><span class="tag tf">wagyu yakiniku</span><span class="tag tb">book ahead</span></div>
+      <div class="rec-card-note">Hyper beef-focused 8-course kuroge wagyu. Don't skip the gyukatsu sando add-on. Intimate, quiet — contrast to Yoroniku's energy. ~¥20,000/person.</div>
+    </div>
+
+    <div class="rec-card">
+      <div class="rec-card-name">Koffee Mameya (Omotesando)</div>
+      <div class="rec-tags"><span class="tag tcafe">cafe</span></div>
+      <div class="rec-card-note">The best-for-Ansel stop in Tokyo. Single-origin bar in a tiny alley off Omotesando — staff walks you through origins and brewing. Standing-only but worth every sip.</div>
+    </div>
+
+    <div class="rec-card">
+      <div class="rec-card-name">Yanaka Coffee (Yanaka)</div>
+      <div class="rec-tags"><span class="tag tcafe">cafe</span></div>
+      <div class="rec-card-note">Old-school roastery in the most Tokyo-feeling neighborhood remaining. Buy beans too — they ship internationally if you want to take some home.</div>
+    </div>
+
+    <div class="rec-card">
+      <div class="rec-card-name">Shibuya Gyukatsu (Shibuya)</div>
+      <div class="rec-tags"><span class="tag tf">food</span></div>
+      <div class="rec-card-note">Breaded wagyu cutlet that you finish on a personal stone grill. The concept is genius — controls how done your beef is. Long lines but moves fast; go during off-peak lunch.</div>
+    </div>
+
+    <div class="rec-card">
+      <div class="rec-card-name">Omoide Yokocho / Nonbei Yokocho (Shinjuku)</div>
+      <div class="rec-tags"><span class="tag tf">late night</span><span class="tag tn">night</span></div>
+      <div class="rec-card-note">Already in itinerary Day 1, but revisit anytime. Omoide Yokocho = smoky yakitori; Nonbei = lantern-lit cocktail bars. The contrast is the draw.</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- HAKONE -->
+<div class="rec-section">
+  <div class="rec-city-label">🏔 Hakone — day of, near ryokan</div>
+  <div class="rec-grid">
+    <div class="rec-card">
+      <div class="rec-card-name">Ryokan kaiseki (included)</div>
+      <div class="rec-tags"><span class="tag tf">dinner</span></div>
+      <div class="rec-card-note">Your ryokan dinner is the main event. Multi-course, slow, beautiful. Don't eat a big lunch that day.</div>
+    </div>
+    <div class="rec-card">
+      <div class="rec-card-name">Hakone Yumoto — small ramen/soba spots</div>
+      <div class="rec-tags"><span class="tag tf">lunch</span></div>
+      <div class="rec-card-note">The area around Hakone-Yumoto Station has several good soba and ramen shops for a quick lunch before starting the loop. Walk the station area and pick what looks busy.</div>
+    </div>
+    <div class="rec-card">
+      <div class="rec-card-name">Kuro tamago (black eggs, Owakudani)</div>
+      <div class="rec-tags"><span class="tag tf">snack</span></div>
+      <div class="rec-card-note">Eggs hard-boiled in the volcanic sulfur springs, turns shells black. Sold at the cable car station — supposed to add 7 years to your life per egg. One each.</div>
+    </div>
+  </div>
+</div>
+
+<!-- KYOTO -->
+<div class="rec-section">
+  <div class="rec-city-label">⛩ Kyoto — Kawaramachi, Gion, Pontocho, Arashiyama</div>
+  <div class="rec-grid">
+
+    <div class="rec-card">
+      <div class="rec-card-name">Gion Takamitsu (Hanamikoji, Gion)</div>
+      <div class="rec-tags"><span class="tag tf">omakase sushi</span><span class="tag tb">book far ahead</span></div>
+      <div class="rec-card-note">Spinoff of Tokyo's legendary Sushi Takamitsu — opened 2025 on Hanamikoji. Already renowned. Reserve via Tableall. Setting alone (historic Gion street) is extraordinary.</div>
+    </div>
+
+    <div class="rec-card">
+      <div class="rec-card-name">Sushi Ao (Gion)</div>
+      <div class="rec-tags"><span class="tag tf">omakase sushi</span><span class="tag tb">book ahead</span></div>
+      <div class="rec-card-note">Produced by Kikunoi (Kyoto's 3-Michelin kaiseki institution). Traditional townhouse, kaiseki elements woven between nigiri courses. Uniquely Kyoto in style.</div>
+    </div>
+
+    <div class="rec-card">
+      <div class="rec-card-name">Gion Kaifuku Haru-Haru (Gion)</div>
+      <div class="rec-tags"><span class="tag tf">shabu shabu</span><span class="tag tb">book ahead</span></div>
+      <div class="rec-card-note">Premium Kobe and Kyoto wagyu shabu-shabu served in natural crystal pots. Serene Japanese-style interior, menu in multiple languages, wooden plaque souvenir. ~¥8,500/person.</div>
+    </div>
+
+    <div class="rec-card">
+      <div class="rec-card-name">Tendan Gion (Gion)</div>
+      <div class="rec-tags"><span class="tag tf">yakiniku</span><span class="tag tb">book ahead</span></div>
+      <div class="rec-card-note">Kyoto-style yakiniku (lighter dashi sauce instead of standard thick sauce). Views over Gion from the table. Summer all-you-can-drink plan or omakase chef's choice menu. ~¥16,000/person.</div>
+    </div>
+
+    <div class="rec-card">
+      <div class="rec-card-name">Nikuryori Oka (Gion)</div>
+      <div class="rec-tags"><span class="tag tf">wagyu omakase</span><span class="tag tb">book ahead</span></div>
+      <div class="rec-card-note">Aged wagyu in the heart of Gion — chef compares three types side by side. One of the most interesting beef experiences in Japan. Located near Gion on tableall.com.</div>
+    </div>
+
+    <div class="rec-card">
+      <div class="rec-card-name">% Arabica Arashiyama</div>
+      <div class="rec-tags"><span class="tag tcafe">cafe</span></div>
+      <div class="rec-card-note">Already in the itinerary — but legitimately one of the most beautiful cafe locations in the world. Single origin espresso, outdoor seating over the Oi River. Go before 10am.</div>
+    </div>
+
+    <div class="rec-card">
+      <div class="rec-card-name">Walden Woods Kyoto (Kawaramachi)</div>
+      <div class="rec-tags"><span class="tag tcafe">cafe</span></div>
+      <div class="rec-card-note">Specialty-roast coffee shop in a refined old machiya near your hotel. Light roast focus, careful pour-overs. One of Kyoto's best for serious coffee. 10 min walk from Kawaramachi Station.</div>
+    </div>
+
+    <div class="rec-card">
+      <div class="rec-card-name">Taisushi (Pontocho)</div>
+      <div class="rec-tags"><span class="tag tf">sushi</span></div>
+      <div class="rec-card-note">Retro, locally loved, affordable omakase nigiri right on Pontocho. Great contrast to the high-end options — casual counter, ~¥3,000–4,000/person. No reservation needed.</div>
+    </div>
+
+    <div class="rec-card">
+      <div class="rec-card-name">Nishiki Market (Kawaramachi)</div>
+      <div class="rec-tags"><span class="tag tf">food</span></div>
+      <div class="rec-card-note">Already in itinerary Day 1 for lunch. But worth knowing: the covered market is great for tsukemono (pickles) and yuba (tofu skin) to eat-and-walk anytime.</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- OSAKA -->
+<div class="rec-section">
+  <div class="rec-city-label">🏮 Osaka — Namba, Shinsaibashi, Umeda, Dotonbori</div>
+  <div class="rec-grid">
+
+    <div class="rec-card">
+      <div class="rec-card-name">Harijyu Dotonbori (Dotonbori)</div>
+      <div class="rec-tags"><span class="tag tf">sukiyaki / shabu-shabu</span><span class="tag tb">book ahead</span></div>
+      <div class="rec-card-note">Over 100 years old. A well-established sukiyaki and shabu-shabu institution right in the heart of Dotonbori. Reliable for premium wagyu hot pot without the extreme prices of Gion-tier spots.</div>
+    </div>
+
+    <div class="rec-card">
+      <div class="rec-card-name">Kobe Aburi Bokujo (Shinsaibashi)</div>
+      <div class="rec-tags"><span class="tag tf">yakiniku · Kobe beef</span><span class="tag tb">book ahead</span></div>
+      <div class="rec-card-note">Run directly by a meat wholesaler — "Aburi Bokujo Stairs" presentation of Kobe beef and kuroge wagyu is stunning visually and flavor-wise. Private rooms available. Near Shinsaibashi station.</div>
+    </div>
+
+    <div class="rec-card">
+      <div class="rec-card-name">MAIDO Wagyu Yakiniku (Dotonbori)</div>
+      <div class="rec-tags"><span class="tag tf">yakiniku A5 AYCE</span></div>
+      <div class="rec-card-note">Already in itinerary as final dinner. All-you-can-eat A5 wagyu at the table. High energy, friendly staff, generous time limit. Perfect last-night move.</div>
+    </div>
+
+    <div class="rec-card">
+      <div class="rec-card-name">Kuromon Ichiba Market (Nipponbashi)</div>
+      <div class="rec-tags"><span class="tag tf">food crawl</span></div>
+      <div class="rec-card-note">Already in itinerary Day 3. The move is oysters-then-crab-then-wagyu-skewer eaten standing. Budget ¥2,000–3,000/person for the full crawl.</div>
+    </div>
+
+    <div class="rec-card">
+      <div class="rec-card-name">Brooklyn Roasting Co. Namba</div>
+      <div class="rec-tags"><span class="tag tcafe">cafe</span></div>
+      <div class="rec-card-note">Large, industrial-style, great coffee and proper food (sandwiches, pastries). Opens early, very near Namba Station. Good breakfast option. Buy beans to take home.</div>
+    </div>
+
+    <div class="rec-card">
+      <div class="rec-card-name">Yatt Coffee (Nakazakicho)</div>
+      <div class="rec-tags"><span class="tag tcafe">cafe</span></div>
+      <div class="rec-card-note">Consistently called Osaka's best cafe atmosphere — chill, local, serves proper breakfast alongside excellent coffee. 15 min subway from Namba to Nakazakicho (Tanimachi Line). Worth the detour on a slow morning.</div>
+    </div>
+
+    <div class="rec-card">
+      <div class="rec-card-name">Mizuno (Dotonbori)</div>
+      <div class="rec-tags"><span class="tag tf">okonomiyaki</span></div>
+      <div class="rec-card-note">The classic Osaka okonomiyaki spot on Dotonbori. Iconic, touristy, but genuinely the real thing. Watch it cooked on the iron griddle in front of you. No reservation; expect a short wait.</div>
+    </div>
+
+    <div class="rec-card">
+      <div class="rec-card-name">Cafe de L'Ambre (Shinsaibashi)</div>
+      <div class="rec-tags"><span class="tag tcafe">kissaten</span></div>
+      <div class="rec-card-note">Old-school kissaten (Japanese coffee house) — aged charcoal-roasted coffee, served in vintage cups, utterly still atmosphere. The opposite of third-wave. Perfect pre-dinner ritual.</div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ===== TRANSPORTATION ===== -->
+<div class="section-head">
+  <h2>Transportation</h2>
+  <span>how to buy, what to get, estimated fares for two people</span>
+</div>
+
+<div class="trans-section">
+  <div class="trans-intro">
+    <strong style="color:var(--text);font-weight:500;">The short version:</strong> Skip the nationwide JR Pass — it doesn't pay off for your specific route. Instead: get two <strong>Suica IC cards</strong> at the airport for all city transit, buy <strong>individual Shinkansen tickets via SmartEX app</strong> for the two big legs, and get a <strong>Hakone Freepass</strong> for the Hakone day from Shinjuku. Total inter-city transport cost for two is roughly <strong>¥65,000–70,000</strong> (~$440–470) vs. ¥100,000 for two 7-day JR Passes. Meaningful savings.
+  </div>
+
+  <div class="pass-compare">
+    <div class="pass-card">
+      <h4>7-Day JR Pass (nationwide)</h4>
+      <p>¥50,000/person · ¥100,000 for two. Doesn't cover Hakone (Odakyu line), Tokyo Metro, Osaka Metro, or the Nozomi shinkansen (fastest). After the 2023 price hike, your Golden Route itinerary without Hiroshima doesn't break even.</p>
+    </div>
+    <div class="pass-card recommended">
+      <h4>Individual tickets + Suica + Hakone Freepass</h4>
+      <p>~¥32,000–35,000/person · ~¥65,000–70,000 for two. Covers everything, lets you ride the faster Nozomi, no activation window pressure. Buy Shinkansen tickets on SmartEX app before you go.</p>
+    </div>
+  </div>
+
+  <div style="height:16px;"></div>
+
+  <!-- LEG BY LEG -->
+  <div class="trans-leg">
+    <span class="trans-bullet"></span>
+    <div class="trans-leg-title">1 · Narita Airport → Shinjuku hotel (Arrival, May 23)</div>
+    <div class="trans-leg-body">
+      <strong>Take:</strong> Narita Express (N'EX) — JR train, departs Terminal 1/2/3. Buy at the airport JR ticket counter or machine (IC card also works but pricier than the N'EX round-trip deal).<br>
+      <strong>Time:</strong> ~90 min direct to Shinjuku Station<br>
+      <strong>Cost:</strong> <span class="fare">¥3,070/person one way · ¥4,070 round trip</span><br>
+      <strong>Buy:</strong> At the JR East Travel Center at the airport (buy while getting your Suica card). Ask for the "N'EX Tokyo round trip" for a slight discount if you plan to return from Shinjuku on May 31.<br>
+      <strong>Get Suica here:</strong> At the same JR East counter or vending machine. Load ¥3,000–5,000 on each card immediately. Suica works on all subways, JR local trains, and some buses throughout Tokyo, Kyoto, and Osaka.
+    </div>
+  </div>
+
+  <div class="trans-leg">
+    <span class="trans-bullet"></span>
+    <div class="trans-leg-title">2 · Tokyo local transit (May 23–25)</div>
+    <div class="trans-leg-body">
+      <strong>Use:</strong> Suica IC card for everything — tap in, tap out.<br>
+      <strong>Lines to know:</strong> JR Yamanote Line (the big circle — hits Shinjuku, Shibuya, Harajuku, Ueno, Akihabara, Tokyo Station). Tokyo Metro for east-west trips. Odakyu Line from Shinjuku for Shimokitazawa.<br>
+      <strong>Kamakura day trip (May 24):</strong> Shinjuku → Kamakura on JR Shonan-Shinjuku Line, direct, ~1hr. <span class="fare">~¥940/person each way, pay with Suica</span>. Enoden tram in Kamakura/Enoshima area also Suica-compatible.<br>
+      <strong>Typical subway fare:</strong> ¥170–280/ride. Load enough yen at a top-up machine when you get low.
+    </div>
+  </div>
+
+  <div class="trans-leg">
+    <span class="trans-bullet"></span>
+    <div class="trans-leg-title">3 · Shinjuku → Hakone (May 26)</div>
+    <div class="trans-leg-body">
+      <strong>Take:</strong> Odakyu Line from Shinjuku Station (west exit, Odakyu platforms)<br>
+      <strong>What to buy:</strong> <strong>Hakone Freepass (2-day, from Shinjuku)</strong> — buy this at the Odakyu Sightseeing Service Center (B1 of Shinjuku Station west exit, open 8am–6pm). Buy the day before or the morning of.<br>
+      <strong>Freepass cost:</strong> <span class="fare">¥7,100/person includes round-trip Shinjuku ↔ Odawara + all Hakone transit (Tozan Railway, Cable Car, Ropeway, Lake Ashi pirate cruise, buses)</span><br>
+      <strong>Romancecar upgrade:</strong> <span class="fare">+¥1,200/person each way</span> — reserved seat on the scenic limited express (80 min instead of 100+, panoramic windows). Worth it. Book at same Odakyu counter.<br>
+      <strong>Total Hakone transport per person:</strong> <span class="fare">~¥9,500 (Freepass + Romancecar both ways)</span><br>
+      <strong>Note:</strong> You'll exit Hakone via Odawara Station (not back to Shinjuku) to catch the Shinkansen to Kyoto — so you only use the Shinjuku↔Odawara segment one way. This is fine; the Freepass covers it.
+    </div>
+  </div>
+
+  <div class="trans-leg">
+    <span class="trans-bullet"></span>
+    <div class="trans-leg-title">4 · Odawara → Kyoto Shinkansen (May 27)</div>
+    <div class="trans-leg-body">
+      <strong>Take:</strong> Tokaido Shinkansen from Odawara Station. Take <strong>Hikari service</strong> (stops at Odawara; Nozomi skips it). Travel time ~2h10 to Kyoto.<br>
+      <strong>Cost:</strong> <span class="fare">~¥13,850/person reserved seat, regular season</span><br>
+      <strong>How to buy:</strong> Use the <strong>SmartEX app</strong> (smart-ex.jp) — download before the trip, link a credit card, book in English. You get a QR code, skip the ticket counter entirely. Can also buy at JR ticket machines or counter at any major station. Book a few weeks ahead to guarantee your preferred time.<br>
+      <strong>Which seat:</strong> Book seats on the right (D/E side) — Mt. Fuji is visible from the right side going westbound, roughly 40–50 min into the journey. Keep eyes open around Shin-Fuji Station.
+    </div>
+  </div>
+
+  <div class="trans-leg">
+    <span class="trans-bullet"></span>
+    <div class="trans-leg-title">5 · Kyoto local transit (May 27–28)</div>
+    <div class="trans-leg-body">
+      <strong>Use:</strong> Suica for Kyoto subway (Karasuma Line, Tozai Line) and JR local trains.<br>
+      <strong>Fushimi Inari (May 27):</strong> Kyoto Station → Inari Station on JR Nara Line, 5 min, <span class="fare">¥180</span> — use Suica.<br>
+      <strong>Arashiyama (May 28 dawn):</strong> From Kawaramachi, take Hankyu Line to Katsura, change to Hankyu Arashiyama Line to Arashiyama (Hankyu). ~30 min total. <span class="fare">~¥230</span> — Suica works on Hankyu. Alternative: Randen (Keifuku) tram from Shijo-Omiya, ~20 min to Arashiyama — ¥250, very scenic.<br>
+      <strong>Kinkaku-ji, Ryoan-ji area:</strong> City Bus 101 or 205 from Kyoto Station — <span class="fare">¥230 flat</span>, one day bus pass available (¥700) if you're doing 4+ bus rides.<br>
+      <strong>Suica note:</strong> Suica works on Kyoto subway, JR local lines, and Hankyu. It does NOT work on Kyoto city buses (pay cash ¥230, or buy the 1-day bus card at tourist info inside Kyoto Station).
+    </div>
+  </div>
+
+  <div class="trans-leg">
+    <span class="trans-bullet"></span>
+    <div class="trans-leg-title">6 · Kyoto → Osaka (May 29)</div>
+    <div class="trans-leg-body">
+      <strong>Recommended:</strong> JR Rapid (Shinkaisoku) from Kyoto Station → Osaka Namba area via Tennoji, or straight to Osaka Station. <span class="fare">~¥560/person · ~30 min · pay with Suica</span>. No need to buy a Shinkansen ticket for this short hop — total overkill.<br>
+      <strong>For Namba specifically:</strong> JR Rapid to Shin-Imamiya/Tennoji then Osaka Metro to Namba (~15 more min), or take the Hankyu from Kyoto-Kawaramachi to Umeda then Osaka Metro south — depends on your hotel's exact neighborhood. Google Maps directions work perfectly for this.<br>
+      <strong>Time:</strong> ~30–45 min door to door.
+    </div>
+  </div>
+
+  <div class="trans-leg">
+    <span class="trans-bullet"></span>
+    <div class="trans-leg-title">7 · Osaka local transit (May 29–31)</div>
+    <div class="trans-leg-body">
+      <strong>Use:</strong> Suica for Osaka Metro (all lines) and JR Osaka Loop Line.<br>
+      <strong>Nara day trip (May 30):</strong> Kintetsu Namba Station (different from JR Namba — 5 min walk from Namba area) → Kintetsu Nara. <span class="fare">~¥680/person each way · ~40 min · pay with Suica</span>. Much better than the JR route. Buy at the Kintetsu machine — or just tap Suica.<br>
+      <strong>Umeda (May 30):</strong> Osaka Metro Midosuji Line from Namba → Umeda, 8 min, <span class="fare">¥230</span>.<br>
+      <strong>Key note:</strong> Osaka Metro and the private Kintetsu line are NOT covered by any JR pass — you need Suica (or cash) for these regardless.
+    </div>
+  </div>
+
+  <div class="trans-leg">
+    <span class="trans-bullet"></span>
+    <div class="trans-leg-title">8 · Osaka (Shin-Osaka) → Tokyo Shinkansen (May 31)</div>
+    <div class="trans-leg-body">
+      <strong>Take:</strong> Tokaido Shinkansen from <strong>Shin-Osaka Station</strong> (not Osaka Station — take the Midosuji Line metro 1 stop north from Umeda/Osaka Station to Shin-Osaka, or 5 stops from Namba, ~10–12 min). Take <strong>Hikari or Nozomi</strong> — Nozomi is fastest (~2h22) but requires booking separately. Hikari is ~2h40.<br>
+      <strong>Cost:</strong> <span class="fare">~¥14,720/person Hikari reserved · ~¥15,280 Nozomi reserved</span><br>
+      <strong>How to buy:</strong> SmartEX app same as before. Book this leg when you book the Odawara→Kyoto leg — both can be done in the app before you leave home.<br>
+      <strong>Seat side:</strong> On the return (eastbound), Fuji is on your LEFT side.
+    </div>
+  </div>
+
+  <div class="trans-leg">
+    <span class="trans-bullet"></span>
+    <div class="trans-leg-title">9 · Tokyo → Narita Airport (May 31 evening)</div>
+    <div class="trans-leg-body">
+      <strong>Take:</strong> N'EX (Narita Express) from Shinjuku Station → Narita Terminal 1/2/3. Departs ~5:00–5:15pm to arrive ~6:30pm for a 9:30pm flight.<br>
+      <strong>Cost:</strong> <span class="fare">¥3,070/person</span> (or ~¥500 cheaper if you bought the round-trip N'EX deal on arrival)<br>
+      <strong>Luggage note:</strong> Leave bags in a coin locker at Shinjuku when you arrive from Osaka (~¥400–700/day for a large locker). Pick them up before catching the N'EX. The locker area is well-signed at Shinjuku Station.
+    </div>
+  </div>
+
+</div>
+
+<div class="booking-note">
+  <strong>📱 Apps & cards to set up before departure</strong>
+  <strong>SmartEX app</strong> (smart-ex.jp/en) — book both Shinkansen legs (Odawara→Kyoto and Shin-Osaka→Tokyo) before you fly. English interface, link a Visa/Mastercard, receive QR codes, scan at the gate. Do this at least 2–3 weeks before May 27 and May 31. &nbsp;|&nbsp; <strong>Suica card</strong> — pick up at Narita Airport JR East Travel Center on arrival. Load ¥5,000 each to start. Top up at any JR vending machine. &nbsp;|&nbsp; <strong>Hakone Freepass</strong> — buy in person at Odakyu Sightseeing Service Center in Shinjuku Station (B1, west exit) on the morning of May 26, or the day before. Get the 2-day version from Shinjuku (¥7,100). Add Romancecar seat tickets at the same counter (¥1,200 each way). &nbsp;|&nbsp; <strong>Google Maps</strong> — works extremely well for Japanese transit. Type your start and end and it will show you exactly which train/subway/bus, what to pay, and when to transfer. Use it constantly.
+</div>
+
+</body>
+</html>
