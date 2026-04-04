@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://mika-okamoto.github.io/sitemap.xml
