@@ -37,7 +37,7 @@ cv:
         start_date: 2025-01
         end_date: present
         highlights:
-          - Advised by Prof. Mark Riedl.
+          - Advised by Dr. Mark Riedl.
           - Researching explainable AI for multi-step agentic AI systems, enabling users to understand why tasks are delegated to specific models and supporting meaningful human oversight of automated pipelines; paper accepted at HCXAI Workshop at CHI 2026.
           - Developing counterfactual explanation methods for agentic workflows that provide users with actionable insights into how workflow outcomes could have differed under alternative conditions, helping identify failure modes and build appropriate trust.
           - Investigating machine unlearning methods to identify how training data composition correlates with language model performance on specific task domains, with the goal of enabling targeted capability control.
@@ -61,7 +61,7 @@ cv:
         start_date: 2024-01
         end_date: present
         highlights:
-          - Advised by Prof. Sudheer Chava.
+          - Advised by Dr. Sudheer Chava.
           - Designed BELLA, a system to profile LLMs' strengths and weaknesses and recommend the optimal model for a task based on budget constraints and necessary skills; presented as first-author paper (poster) at MLSys Young Professionals Symposium 2025.
           - Co-created FLaME, a holistic finance benchmark for evaluating language models across sentiment analysis, numerical reasoning, document understanding, and question answering; co-first author paper accepted at ACL Findings 2025.
           - Benchmarked LLM prompting methods for financial sentiment classification, achieving 10% relative improvement over baselines via automated prompt optimization.

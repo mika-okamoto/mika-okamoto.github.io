@@ -23,7 +23,7 @@ latest_posts:
   limit: 3
 ---
 
-I am a final-year B.S. student in Computer Science at Georgia Tech, advised by Prof. [Mark Riedl](https://eilab.gatech.edu/mark-riedl){:target="_blank"}.
+I am a final-year B.S. student in Computer Science at Georgia Tech, advised by Dr. [Mark Riedl](https://eilab.gatech.edu/mark-riedl){:target="_blank"}.
 
 My research focuses on **explainability for AI systems** — understanding and interpreting the behavior of large language models and agentic workflows. I am particularly interested in human-centered approaches to explainability, where the goal is not just to produce explanations, but to make them useful and actionable for people interacting with AI. I also study LLM behavior more broadly, including how models reason, make decisions, and fail.
 
