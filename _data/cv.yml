@@ -1,0 +1,139 @@
+cv:
+  social_networks:
+    - network: GitHub
+      username: mika-okamoto
+    - network: LinkedIn
+      username: mokamoto
+
+  sections:
+    Education:
+      - institution: Georgia Institute of Technology
+        location: Atlanta, GA
+        url: https://www.gatech.edu/
+        studyType: "B.S. in Computer Science"
+        start_date: 2023
+        end_date: 2026
+        highlights:
+          - "GPA: 4.00 | Expected Graduation: May 2026"
+          - "Concentration: Machine Learning and Data Systems"
+          - "Relevant Coursework: Machine Learning, Databases, Computer Systems and Networks, Data Structures and Algorithms"
+
+    Experience:
+      - company: Two Sigma Investments
+        position: Software Engineer Intern
+        location: New York, NY
+        url: https://www.twosigma.com/
+        start_date: 2025-06
+        end_date: 2025-08
+        highlights:
+          - Designed key performance metrics through collaboration with the product team that provide traders actionable feedback on their ideas, driving deeper platform engagement and higher-quality work.
+          - Engineered Python library to perform automated daily metric calculations and large-scale backfills.
+          - Built and deployed ETL pipeline using AWS Lambda and Step Functions to process data in Amazon RDS with PostgreSQL, including Datadog monitoring, unit tests, and full documentation.
+
+      - company: Georgia Tech — EI & HCAI Lab
+        position: Research Assistant
+        location: Atlanta, GA
+        url: https://eilab.gatech.edu/
+        start_date: 2025-01
+        end_date: present
+        highlights:
+          - Advised by Prof. Mark Riedl.
+          - Researching explainable AI for multi-step agentic AI systems, enabling users to understand why tasks are delegated to specific models and supporting meaningful human oversight of automated pipelines; paper accepted at HCXAI Workshop at CHI 2026.
+          - Developing counterfactual explanation methods for agentic workflows that provide users with actionable insights into how workflow outcomes could have differed under alternative conditions, helping identify failure modes and build appropriate trust.
+          - Investigating machine unlearning methods to identify how training data composition correlates with language model performance on specific task domains, with the goal of enabling targeted capability control.
+
+      - company: Georgia Tech Research Institute (GTRI) — ARCAID Lab
+        position: Research Assistant
+        location: Atlanta, GA
+        url: https://www.gtri.gatech.edu/
+        start_date: 2024-01
+        end_date: present
+        highlights:
+          - Advised by Dr. Clayton Kerce and Dr. Pat Langley.
+          - Devising search algorithms that utilize AI agents to optimize scientific claim decomposition and verification, improving factual accuracy assessment in complex reasoning settings.
+          - Researching techniques for learning generalized solutions to planning problems via hierarchical problem networks, aiming to reduce search complexity and enable more efficient automated reasoning.
+          - Built a RAG-enhanced chatbot over a corpus of research papers and a code generation pipeline for creating, executing, and debugging Python simulations, empowering researchers to rapidly onboard to specialized topics and test ideas experimentally.
+
+      - company: Georgia Tech — Financial Services Innovation Lab (FinTech Lab)
+        position: Research Assistant
+        location: Atlanta, GA
+        url: https://fintech.gatech.edu/
+        start_date: 2024-01
+        end_date: present
+        highlights:
+          - Advised by Prof. Sudheer Chava.
+          - Designed BELLA, a system to profile LLMs' strengths and weaknesses and recommend the optimal model for a task based on budget constraints and necessary skills; presented as first-author paper (poster) at MLSys Young Professionals Symposium 2025.
+          - Co-created FLaME, a holistic finance benchmark for evaluating language models across sentiment analysis, numerical reasoning, document understanding, and question answering; co-first author paper accepted at ACL Findings 2025.
+          - Benchmarked LLM prompting methods for financial sentiment classification, achieving 10% relative improvement over baselines via automated prompt optimization.
+
+      - company: Raytheon Technologies (RTX)
+        position: Machine Learning Engineering Intern
+        location: Cedar Rapids, IA
+        start_date: 2024-05
+        end_date: 2024-08
+        highlights:
+          - Developed a production-approved Python framework to integrate explainable AI into existing ML workflows, enabling post-hoc interpretability for deployed models.
+          - Integrated MLflow to enhance experiment tracking and reproducibility in MLOps processes, saving 50+ hours/month in manual logging overhead.
+          - Improved object detection throughput on a constrained security system by 5x via multithreading and pipeline optimization.
+
+      - company: Palmer Lab, UC San Diego
+        position: Bioinformatics Research Assistant
+        location: San Diego, CA
+        url: https://palmerlab.org/
+        start_date: 2023-06
+        end_date: 2023-10
+        highlights:
+          - Optimized ML algorithm for phenotype trait prediction based on genetic data through feature reduction with Python & R, reducing input features from 7.3M to 50k with minimal (< 0.01%) performance degradation.
+          - Co-authored 2 peer-reviewed journal articles on genetic prediction (JARO and bioRxiv).
+          - Performed GWAS pipeline preparation and data quality control for large-scale genomics datasets.
+
+    Publications:
+      - title: "Explainable Model Routing for Agentic Workflows"
+        date: "2026"
+        publisher: "HCXAI Workshop at CHI 2026"
+        summary: "Okamoto, M., Erol, A., & Riedl, M."
+
+      - title: "Counterfactual Explanations for Agentic Workflows"
+        date: "2026"
+        publisher: "HCXAI Workshop at CHI 2026"
+        summary: "Singh†, M., Kim†, G., Okamoto†, M., et al. (†&nbsp;equal contribution)"
+
+      - title: "FLaME: Holistic Finance Language Model Evaluation"
+        date: "2025"
+        url: "https://arxiv.org/abs/2506.15846"
+        publisher: "ACL Findings 2025"
+        summary: "Matlin†, G., Okamoto†, M., Pardawala†, H., Yang, Y., & Chava, S. (†&nbsp;equal contribution)"
+
+      - title: "Trust by Design: Skill Profiles for Transparent, Cost-Aware LLM Routing (BELLA)"
+        date: "2025"
+        url: "https://arxiv.org/abs/2602.02386"
+        publisher: "MLSys Young Professionals Symposium (YPS) 2025"
+        summary: "Okamoto, M., Erol, A., & Matlin, G."
+
+      - title: "Genome-Wide Association Study of Age-Related Hearing Loss in CFW Mice"
+        date: "2025"
+        url: "https://link.springer.com/article/10.1007/s10162-025-00994-1"
+        publisher: "Journal of the Association for Research in Otolaryngology (JARO)"
+        summary: "Polesskaya, O., Boussaty, E., Cheng, R., et al."
+
+      - title: "RATTACA: Genetic Predictions in Heterogeneous Stock Rats"
+        date: "2023"
+        url: "https://www.biorxiv.org/content/10.1101/2023.09.18.558279v1.full.pdf"
+        publisher: "bioRxiv"
+        summary: "Johnson, B. B., Sanches, T. M., Okamoto, M. H., et al."
+
+    Service:
+      - bullet: "Reviewer, ACL Rolling Review (ARR) — January 2026"
+
+    Skills:
+      - name: Programming Languages
+        keywords: "Python, Java, SQL, R, Bash, C++, HTML, CSS, JavaScript, Golang"
+
+      - name: Machine Learning & AI
+        keywords: "PyTorch, TensorFlow, scikit-learn, Pandas, NumPy, OpenCV, Explainable AI, LLMs, NLP, Automated Reasoning, Machine Unlearning"
+
+      - name: Cloud & Infrastructure
+        keywords: "Amazon Web Services (AWS), Docker, Git, GitHub, Datadog, Jira, Confluence"
+
+      - name: Full Stack & Data Engineering
+        keywords: "ReactJS, Flask, Gradle, REST APIs, Firebase, PostgreSQL, MySQL, SQLite, Microsoft SQL Server"

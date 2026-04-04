@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p old)",
+      "Bash(mv index.html index2.html script.js style.css todo.html google936d767c4cf9e51c.html images old/)",
+      "Bash(cd:*)",
+      "Bash(cp \"old/images/Mika Okamoto Resume - 2025.pdf\" assets/pdf/resume.pdf)",
+      "Bash(cp old/images/headshot.jpeg assets/img/headshot.jpeg)",
+      "Bash(cp old/images/bella_overview.svg assets/img/bella_overview.svg)",
+      "Bash(cp old/images/rattaca.jpg assets/img/rattaca.jpg)",
+      "Bash(cp old/images/Benchmarking_Prompting_Methods_Paper.pdf assets/pdf/Benchmarking_Prompting_Methods_Paper.pdf)",
+      "Bash(for f:*)",
+      "Bash(do sed:*)",
+      "Bash(done)",
+      "WebFetch(domain:xiongsiheng.github.io)",
+      "WebFetch(domain:decagon.ai)",
+      "Bash(ls:*)",
+      "Bash(rm -rf _projects/ _books/ _teachings/ old/ lighthouse_results/)",
+      "Bash(rm -f _posts/*.md)",
+      "Bash(rm -f _pages/projects.md _pages/blog.md _pages/books.md _pages/teaching.md _pages/repositories.md _pages/profiles.md _pages/dropdown.md _pages/about_einstein.md)",
+      "Bash(rm -f assets/img/1.jpg assets/img/2.jpg assets/img/3.jpg assets/img/4.jpg assets/img/5.jpg assets/img/6.jpg assets/img/7.jpg assets/img/8.jpg assets/img/9.jpg assets/img/10.jpg assets/img/11.jpg assets/img/12.jpg)",
+      "Bash(rm -rf assets/img/book_covers/)",
+      "Bash(rm -f .all-contributorsrc)",
+      "Bash(rm -f .github/workflows/deploy-docker-tag.yml .github/workflows/deploy-image.yml .github/workflows/docker-slim.yml .github/workflows/lighthouse-badger.yml .github/workflows/prettier-comment-on-pr.yml .github/workflows/prettier-html.yml .github/workflows/update-tocs.yml .github/workflows/copilot-setup-steps.yml .github/workflows/schedule-posts.txt)",
+      "Bash(rm -rf .github/ISSUE_TEMPLATE/ .github/agents/ .github/instructions/)",
+      "Bash(rm -f .github/copilot-instructions.md .github/GIT_WORKFLOW.md .github/release.yml .github/stale.yml)",
+      "Bash(xargs grep:*)",
+      "Bash(grep:*)"
+    ]
+  }
+}
