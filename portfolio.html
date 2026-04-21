@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mika Okamoto — LMC 3403 Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #fff;
+    color: #111;
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  /* ── GATE ── */
+  #gate {
+    position: fixed; inset: 0;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    z-index: 9999;
+    transition: opacity 0.3s ease;
+  }
+  #gate h2 { font-size: 1.3rem; font-weight: 600; }
+  #gate p.sub { font-size: 0.9rem; color: #666; }
+  #gate-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 260px;
+    margin-top: 0.5rem;
+  }
+  #gate-input {
+    padding: 0.6rem 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: inherit;
+    text-align: center;
+    outline: none;
+  }
+  #gate-input:focus { border-color: #555; }
+  #gate-btn {
+    padding: 0.6rem;
+    background: #111;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+  }
+  #gate-btn:hover { background: #333; }
+  #gate-error { font-size: 13px; color: #c00; text-align: center; min-height: 1em; }
+
+  /* ── PORTFOLIO ── */
+  #portfolio { display: none; }
+  #portfolio.unlocked { display: block; }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0;
+    background: #fff;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 0.9rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+  }
+  nav .name { font-weight: 600; font-size: 15px; text-decoration: none; color: #111; }
+  nav ul { list-style: none; display: flex; gap: 1.75rem; }
+  nav ul a { font-size: 14px; color: #555; text-decoration: none; }
+  nav ul a:hover { color: #111; }
+
+  /* ── CONTENT ── */
+  .page { max-width: 860px; margin: 0 auto; padding: 0 2rem; }
+
+  /* ── LANDING ── */
+  #landing {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 4rem 2rem 3rem;
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    gap: 3rem;
+    align-items: start;
+  }
+  #landing h1 { font-size: 2rem; font-weight: 600; margin-bottom: 1rem; }
+  #landing p { color: #333; margin-bottom: 0.85rem; }
+  .headshot img {
+    width: 100%;
+    border-radius: 4px;
+    display: block;
+  }
+
+  /* ── SECTIONS ── */
+  section { padding: 3rem 0; border-top: 1px solid #e5e5e5; }
+  h2 { font-size: 1.3rem; font-weight: 600; margin-bottom: 1.75rem; }
+  h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.6rem; }
+  p { color: #333; margin-bottom: 0.85rem; }
+
+  /* ── OUTCOME GRID ── */
+  .outcome-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .outcome-card h3 { font-size: 1rem; }
+
+  /* ── PROJECT ITEMS ── */
+  .project { margin-bottom: 3rem; }
+  .project:last-child { margin-bottom: 0; }
+
+  /* ── PDF / EMBED SLOTS ── */
+  .embed-slot {
+    background: #f5f5f5;
+    border: 1px dashed #bbb;
+    border-radius: 4px;
+    padding: 1.25rem 1.5rem;
+    font-size: 13px;
+    color: #555;
+    margin-top: 0.75rem;
+  }
+  .embed-slot + .embed-slot { margin-top: 0.5rem; }
+  .embed-slot b { display: block; margin-bottom: 0.3rem; color: #333; font-size: 13px; }
+  .embed-slot code {
+    background: #e8e8e8;
+    padding: 0.1em 0.35em;
+    border-radius: 3px;
+    font-size: 12px;
+    word-break: break-all;
+  }
+
+  /* ── PRO GRID ── */
+  .pro-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid #e5e5e5;
+    padding: 1.5rem 2rem;
+    font-size: 13px;
+    color: #888;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 640px) {
+    #landing { grid-template-columns: 1fr; }
+    .headshot { max-width: 160px; }
+    .outcome-grid, .pro-grid { grid-template-columns: 1fr; }
+    nav ul { gap: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- GATE -->
+<div id="gate">
+  <h2>Mika Okamoto — LMC 3403 Portfolio</h2>
+  <p class="sub">Password protected</p>
+  <form id="gate-form" onsubmit="unlock(event)">
+    <input id="gate-input" type="password" placeholder="Password" autocomplete="off" autofocus />
+    <button id="gate-btn" type="submit">Enter</button>
+    <p id="gate-error"></p>
+  </form>
+</div>
+
+<!-- PORTFOLIO -->
+<div id="portfolio">
+
+  <nav>
+    <a class="name" href="#landing">Mika Okamoto</a>
+    <ul>
+      <li><a href="#assessment">Self-Assessment</a></li>
+      <li><a href="#projects">Class Projects</a></li>
+      <li><a href="#professional">Research</a></li>
+    </ul>
+  </nav>
+
+  <!-- LANDING -->
+  <div id="landing">
+    <div>
+      <h1>Mika Okamoto</h1>
+      <p>Hello! I’m Mika Okamoto, a Computer Science student finishing my B.S. at Georgia Tech this spring. I study explainability for AI systems, specifically, how to make the behavior of large language models and agentic workflows interpretable and actionable for everyone who interacts with them. I am advised by Dr. Mark Riedl in the Entertainment Intelligence Lab.</p>
+      <p>Over my time at Georgia Tech, I’ve pursued understanding and explaining LLM behavior across many research projects. I’ve built transparent LLM routing systems to better inform developers creating agentic workflows, studied LLM performance and behavior in corporate settings under adversative pressures, and researched how training data contributes to LLM capabilities. This work has led to publications at ACL, MLSys, CHI, and more. I’m also interested in the human dimension of AI, as I focus on human-centered explainability. This includes what it means for a system to be trustworthy to users and how decisions get communicated across audiences with varying levels of expertise in ways that they will easily understand and can act on.</p>
+      <p>This portfolio covers what I’ve researched and built across my time here, along with how I’ve learned to communicate them across writing, design, and presentation. After graduation, I’ll be joining Decagon, an AI startup where engineers need to understand customer needs and translate them into product features.</p>
+    </div>
+    <div class="headshot">
+      <img src="assets/img/headshot.jpeg" alt="Photo of Mika Okamoto" />
+    </div>
+  </div>
+
+  <!-- SELF-ASSESSMENT -->
+  <section id="assessment">
+    <div class="page">
+      <h2>Self-Assessment Analysis</h2>
+      <p>I came into this semester with three main goals: designing artifacts that communicate more effectively to targeted audiences, building a faster and more effective process for planning and drafting technical documents, and becoming more persuasive in public speaking. I believe I have grown in all of these across the course, and I will discuss this through the four course outcomes.</p>
+      <div class="outcome-grid">
+
+        <div class="outcome-card">
+          <h3>Rhetoric</h3>
+          <p>Major Project 2, our Technical Crisis Report, helped me improve on my rhetoric and make my messages more persuasive. In that project, I needed to construct a narrative that made the situation and the stakes understandable to our audience. I had to figure out what context to focus on, which stakeholders to tell the story from, and the level of technical details to mention in order to make our story convincing, easy to understand, and easy to process and take away a clear message from. I designed our infographic, and ensured there was enough context for the audience to understand what prediction markets are so that they would be able to fully understand the current risks and important things they could act on now. I used the feedback from our infographic draft to help craft a better final infographic that was aimed at a general public audience who might have heard about prediction markets in the news, but lacked the technical details or knowledge about risks or what they could personally help with. Our presentation and infographic gained the attention of many people in the class, who were very curious to learn more about prediction markets and asked deeper questions than the surface level details we covered in our presentation, which was a clear sign that I had done my job well in catching the layman audience’s attention.</p>
+          <p>While working on that major project, I’ve also been working on a paper about how the framing of regulatory language and incentives changes AI model behaviors. I’ve had to identify how to frame that project to be understandable from both researchers, who might lack corporate experience of knowledge of how corporate chatbots work, and the general public, who might be concerned about the risks of LLMs but embrace them for their productivity without knowing how they think and behave behind the scenes. I had interesting findings displaying how LLMs break corporate guidelines and rules if they believe it benefits the person talking to them, no matter who they think it might hurt, which I believe is important to get out clearly for researchers to do further research on this topic and corporations to be aware of the risks. I used the rhetoric skills that I’ve learned here to work on writing that paper and framing it through both of these views. It’s been especially helpful in reminding me to read the paper from different mindsets and viewpoints, to see how I come across to different audiences, and correct my wording from there.</p>
+          <p>Learning how to frame my information so it lands persuasively and accurately will help me very much in my future role, and these projects helped me grow this skill greatly.</p>
+        </div>
+
+        <div class="outcome-card">
+          <h3>Process</h3>
+          <p>I learned a lot from the revision experiences during this semester. In past classes I tended to do surface-level revisions, with general wording improvements or sentence restructuring for clarity. In this class, we were required to do major changes that went beyond just simple restructuring, which forced me to really reflect on how to change my writing based on the feedback. For the first major project, I was given feedback on how to change my cover letter to “consider how you could draw out different experiences that connect to the bullets” to fix how my middle “paragraph felt more like a list of accomplishments that closely mirror your resume”. I drew on that feedback to restructure the middle paragraph to focus more on how my experiences directly connected to the bullet points in the job posting, rather than just restating my resume.</p>
+          <p>I also use my revision process skills in my research writing. When creating the camera ready version of my papers this semester, I restructured some sections based on reviewer feedback. I used the feedback on where the reviewers seemed confused to figure out how to rearrange my paper so that it would be more accessible to readers of any background. I also added an additional section to connect my work to a field that I thought many people in the explainability field would know, so that they would have a way to understand how to relate the routing field to their prior knowledge of explainability.</p>
+          <p>These experiences have helped improve my process for drafting technical documents. I have improved how I respond to feedback and think through refining documents for the specific audience.</p>
+        </div>
+
+        <div class="outcome-card">
+          <h3>Modes &amp; Media</h3>
+          <p>This course helped me think about more modalities than just writing, and improve my skills in other modalities and media formats. I designed the infographic for our group in Major Project 2, and I worked on the video and visual step-by-step guide for Major Project 3. As I know from research, a well-designed visual is crucial to a technical work. Many people draw their first – and lasting – impression based on the first visual, as it greatly helps them frame their reading comprehension of the rest of the document. When I design visuals, I always have to think about what elements are the most important to highlight to the audience, and how to best showcase them. I used a timeline for Major Project 2 to show clear chronological flow to the audience, and different colors for my research figure to describe difficulty and importance. In Major Project 3, I used the visual as a supplicant to written work, as many people prefer visual guides where they can look and immediately see what they are supposed to do, rather than wading through a long guide. Seeing a visual as someone talks helps make the speech easier to follow as well, as they are able to follow along by looking at the image and making connections.</p>
+          <p>These have all taught me that visuals are arguments and ways to communicate your message more clearly than with words, as people understand visuals faster. These skills will help me on future research projects when I need to design visuals, as well as presentations where I need to showcase my projects. I need to continue improving combining written, visual, and oral modes to most effectively communicate my message to my audience, and I believe I have done so in this class.</p>
+        </div>
+
+        <div class="outcome-card">
+          <h3>Design</h3>
+          <p>From this semester, I’ve learned to improve the accessibility in the design of my artifacts. Documents that are easier to navigate and are less visually cluttered are better for the reader. My resume design in Major Project 1 was very intentional for helping the audience understand my story and accomplishments, from using a sans-serif font easier on the eyes to my section organization helping the managers scan for my relevant experiences easily. Similarly, I think about design when creating figures and images for my infographic and research papers. I use color theory to help connect people’s inherent assumptions and reactions to the colors to what I want them to think and understand about my document. I’ve always focused on this when designing presentations and figures, but this class helped me practice that skill more. The infographic was good practice for making an easily scannable and immediately legible story to a non-technical expert – a skill that I’ll need in the workplace. This semester also taught me to make my design accessible to all, such as through written descriptions of images for those who are blind.</p>
+          <p>Across all of these outcomes, I continue to focus on the intentionality of my message. I improve with practice, and have had much helpful practice with writing clearly, designing accessibly, and presenting for targeted audiences through this course. I believe I have met all of my course goals from the start of the semester.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CLASS PROJECTS -->
+  <section id="projects">
+    <div class="page">
+      <h2>LMC 3403 Major Projects</h2>
+
+      <div class="project">
+        <h3>MP1: Career Materials</h3>
+        <p>For this project, I created professional application materials – a resume and a cover letter – for a real full time job. The goal was to learn how to frame technical experience for technical and non-technical audiences, whether those materials are seen by hiring managers, recruiters, engineers, researchers, or someone else. This was primarily a design challenge around how to frame my story and background to highlight my experiences in the best light possible for this job. I got to practice revising my cover letter based on the feedback of how to guide the reader better through my story and how it directly connects to what they want to know.</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 0.75rem;">
+          <iframe src="assets/pdf/MP1 Cover Letter - portfolio.pdf" width="100%" height="600px" style="border:none;display:block" title="MP1 Cover Letter PDF" aria-label="Embedded PDF of Mika Okamoto's cover letter for MP1"></iframe>
+          <iframe src="assets/pdf/Mika Okamoto Resume - 2025.pdf" width="100%" height="600px" style="border:none;display:block" title="MP1 Resume PDF" aria-label="Embedded PDF of Mika Okamoto's resume for MP1"></iframe>
+        </div>
+      </div>
+
+      <div class="project">
+        <h3>MP2: Technical Crisis Report &amp; Infographic</h3>
+        <p>In this project, I partnered with William to bring awareness to the dangers of prediction markets and our ideas for fixing them. We discussed the technical crises of insider trading and regulation wars around prediction markets, and how various groups jockeyed for control. We created a specialist report that analyzes what this crisis reveals about how these stakeholders communicated technical details, and an infographic for translating those findings into an easily understood story for a general audience. We presented the infographic to our class to help them understand more about prediction markets and the current discussion surrounding them. This project helped me work on separating what belongs in which modality, and how to best present my message in each type of media.</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 0.75rem;">
+          <iframe src="assets/pdf/MP2 Report - profolio.pdf" width="100%" height="600px" style="border:none;display:block" title="MP2 Technical Crisis Report PDF" aria-label="Embedded PDF of the prediction markets technical crisis report"></iframe>
+          
+          <iframe src="assets/pdf/Prediction Markets, Regulation, and Insider Trading (2).pdf" width="100%" height="600px" style="border:none;display:block" title="MP2 Infographic PDF" aria-label="Embedded PDF of the prediction markets infographic"></iframe>
+        </div>
+        
+      </div>
+
+      <div class="project">
+        <h3>MP3: Community Training Materials</h3>
+        <p>For this project, my team created onboarding materials for teaching assistants at Georgia Tech. We helped with designing flow charts, step by step guides, and videos walking new TAs through the long and confusing orientation process. This was to help TAs who encountered new things for the first time – like how their first paid job works and how to file taxes – easily understand what their options are and what they can do. We also created a recommendation report outlining future directions for TA orientation. This was a very multimodal project that required a consistent voice, structure, and story across all of the materials that we produced.</p>
+        <!-- <iframe src="assets/mp3-training-materials.pdf" width="100%" height="700px" style="border:none;display:block" title="MP3 Community Training Materials PDF" aria-label="Embedded PDF of TA onboarding training materials"></iframe> -->
+        <!-- <div class="embed-slot" role="note" aria-label="PDF placeholder for MP3 Training Materials">
+          <b>PDF — Training Materials / Recommendation Report</b>
+          <code>src="assets/mp3-training-materials.pdf"</code>
+        </div> -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROFESSIONAL WORK -->
+  <section id="professional">
+    <div class="page">
+      <h2>Professional Work</h2>
+      <div class="pro-grid">
+
+        <div>
+          <h3>Explainable Model Routing for Agentic Workflows</h3>
+          <p style="font-size:14px;color:#666;margin-bottom:0.6rem">CHI 2026 — HCXAI Workshop, Spotlight Poster</p>
+          <p>This project works on a practical transparency problem in AI systems. When a router, or an automated pipeline that delegates tasks to language models, the router’s rationale is typically invisible to the user. I created a framework that makes those decisions explainable via natural language justifications for why particular models are selected grounded in skill profiles that connect model capabilities to task requirements. This was accepted as a spotlight poster at the Human-Centered Explainable AI workshop at CHI 2026. This required me to translate a technical system into explanations legible to non-expert users, and to write for academic and general audiences. I had to make the paper accessible to ML systems researchers working on routing system, as well as explainability researchers working on human-centered projects.</p>
+          <iframe src="assets/pdf/2604.03527v1.pdf" width="100%" height="700px" style="border:none;display:block" title="Topaz Routing Paper PDF" aria-label="Embedded PDF of the Topaz explainable model routing paper"></iframe>
+          <!-- <div class="embed-slot" role="note" aria-label="PDF placeholder for Topaz paper">
+            <b>PDF — Topaz Paper</b>
+            <code>src="assets/topaz-paper.pdf"</code>
+          </div> -->
+        </div>
+
+        <div>
+          <h3>AI Incentives and Compliance Paper</h3>
+          <p style="font-size:14px;color:#666;margin-bottom:0.6rem">AIES — Under Submission</p>
+          <p>This project investigates how instruction-tuned large language models respond to regulatory constraints and laws when operating as simulated corporate chatbots. I found that the chatbots can side with the employees instructing them over the corporation, government, or moral laws. This is an important risk of integrating these chatbots into corporate organizations that I needed to communicate to readers clearly. I had to write for both technical and policy-oriented audiences with different priors about AI behavior, which required me to create precise, evidence-grounded writing that didn’t assume audience fluency in machine learning concepts. This also required designing experiments and figures whose logic were legible to readers outside of the field so that these results could be understood by those in companies who may be affected or interested.<br>Note: this is a work in progress and is still under revision before submission. Submission is in late May. I felt this project belonged in this portfolio anyways as it was done during this LMC class. If you would like another example instead, please let me know or view the <a href = "https://mika-okamoto.github.io/" target="_blank">main website</a> where there are links to other papers of mine.</p>
+          <!-- <iframe src="assets/compliance-paper.pdf" width="100%" height="700px" style="border:none;display:block" title="AI Compliance Paper PDF" aria-label="Embedded PDF of the AI incentives and compliance paper"></iframe> -->
+          <!-- <div class="embed-slot" role="note" aria-label="PDF placeholder for compliance paper">
+            <b>PDF — AI Compliance Paper</b>
+            <code>src="assets/compliance-paper.pdf"</code>
+          </div> -->
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Mika Okamoto · Georgia Tech · LMC 3403 · Spring 2026
+  </footer>
+
+</div>
+
+<script>
+  function unlock(e) {
+    e.preventDefault();
+    if (document.getElementById('gate-input').value === 'LMC3403') {
+      const gate = document.getElementById('gate');
+      gate.style.opacity = '0';
+      setTimeout(() => {
+        gate.style.display = 'none';
+        document.getElementById('portfolio').classList.add('unlocked');
+      }, 300);
+    } else {
+      document.getElementById('gate-error').textContent = 'Incorrect password.';
+      document.getElementById('gate-input').value = '';
+      document.getElementById('gate-input').focus();
+    }
+  }
+</script>
+</body>
+</html>
