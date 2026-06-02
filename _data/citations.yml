@@ -1,8 +1,8 @@
 metadata:
-  last_updated: '2026-04-20'
+  last_updated: '2026-05-25'
 papers:
   rcmk3uwAAAAJ:9yKSN-GCB0IC:
-    citations: 8
+    citations: 10
     title: Financial language model evaluation (FLaME)
     year: '2025'
   rcmk3uwAAAAJ:IjCSPb-OGe4C:
@@ -10,11 +10,11 @@ papers:
     title: Explainable Model Routing for Agentic Workflows
     year: '2026'
   rcmk3uwAAAAJ:qjMakFHDy7sC:
-    citations: 1
+    citations: 2
     title: 'Trust by Design: Skill Profiles for Transparent, Cost-Aware LLM Routing'
     year: '2026'
   rcmk3uwAAAAJ:u-x6o8ySG0sC:
-    citations: 1
+    citations: 2
     title: Genome-Wide Association Study of Age-Related Hearing Loss in CFW Mice Identifies Multiple Genes and Loci, Including Prkag2 O. Polesskaya et al.
     year: '2025'
   rcmk3uwAAAAJ:u5HHmVD_uO8C:
