@@ -1,12 +1,12 @@
 metadata:
-  last_updated: '2026-06-10'
+  last_updated: '2026-06-22'
 papers:
   rcmk3uwAAAAJ:9yKSN-GCB0IC:
     citations: 11
     title: Financial language model evaluation (FLaME)
     year: '2025'
   rcmk3uwAAAAJ:IjCSPb-OGe4C:
-    citations: 0
+    citations: 1
     title: Explainable Model Routing for Agentic Workflows
     year: '2026'
   rcmk3uwAAAAJ:qjMakFHDy7sC:
@@ -18,6 +18,10 @@ papers:
     title: Genome-Wide Association Study of Age-Related Hearing Loss in CFW Mice Identifies Multiple Genes and Loci, Including Prkag2 O. Polesskaya et al.
     year: '2025'
   rcmk3uwAAAAJ:u5HHmVD_uO8C:
-    citations: 3
+    citations: 4
     title: 'RATTACA: Genetic predictions in Heterogeneous Stock rats offer a new tool for genetic correlation and experimental design'
     year: '2023'
+  rcmk3uwAAAAJ:zYLM7Y9cAGgC:
+    citations: 0
+    title: Why Do AI Agents Break Rules? How Framing, Context, and Social Signals Shape Compliance
+    year: '2026'
