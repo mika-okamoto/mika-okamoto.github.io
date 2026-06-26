@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-06-22'
+  last_updated: '2026-06-26'
 papers:
   rcmk3uwAAAAJ:9yKSN-GCB0IC:
     citations: 11
@@ -8,6 +8,10 @@ papers:
   rcmk3uwAAAAJ:IjCSPb-OGe4C:
     citations: 1
     title: Explainable Model Routing for Agentic Workflows
+    year: '2026'
+  rcmk3uwAAAAJ:Tyk-4Ss8FVUC:
+    citations: 0
+    title: Where Does Social Reasoning Come From? Capability Provenance in Language Models
     year: '2026'
   rcmk3uwAAAAJ:qjMakFHDy7sC:
     citations: 2
