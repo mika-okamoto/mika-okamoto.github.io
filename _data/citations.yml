@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-07-08'
+  last_updated: '2026-07-10'
 papers:
   rcmk3uwAAAAJ:9yKSN-GCB0IC:
     citations: 12
@@ -26,6 +26,6 @@ papers:
     title: 'RATTACA: Genetic predictions in Heterogeneous Stock rats offer a new tool for genetic correlation and experimental design'
     year: '2023'
   rcmk3uwAAAAJ:zYLM7Y9cAGgC:
-    citations: 0
+    citations: 1
     title: Why Do AI Agents Break Rules? How Framing, Context, and Social Signals Shape Compliance
     year: '2026'
