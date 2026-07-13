@@ -23,8 +23,8 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "news-excited-to-be-joining-two-sigma-investments-as-a-software-engineering-intern-this-summer-2025",
-          title: 'Excited to be joining Two Sigma Investments as a Software Engineering Intern this...',
+        },{id: "news-excited-to-be-joining-two-sigma-investments-as-a-software-engineering-intern-on-modeling-insights-this-summer-2025",
+          title: 'Excited to be joining Two Sigma Investments as a Software Engineering Intern on...',
           description: "",
           section: "News",},{id: "news-trust-by-design-skill-profiles-for-transparent-cost-aware-llm-routing-bella-accepted-as-a-poster-at-mlsys-yps-2025",
           title: 'Trust by Design: Skill Profiles for Transparent, Cost-Aware LLM Routing (BELLA) accepted as...',
@@ -34,6 +34,9 @@ ninja.data = [{
           description: "",
           section: "News",},{id: "news-two-papers-accepted-to-the-human-centered-explainable-ai-hcxai-2026-workshop-at-chi-explainable-model-routing-for-agentic-workflows-and-counterfactual-explanations-for-agentic-workflows-as-spotlight-posters",
           title: 'Two papers accepted to the Human-Centered Explainable AI (HCXAI) 2026 workshop at CHI:...',
+          description: "",
+          section: "News",},{id: "news-where-does-social-reasoning-come-from-accepted-to-conference-on-language-modeling-colm-2026-collaboration-between-mark-riedl-s-lab-and-eleuther-ai-on-tracing-social-reasoning-capabilities-in-llms-to-specific-pretraining-data-sources-using-gradient-based-attribution",
+          title: 'Where Does Social Reasoning Come From? accepted to Conference on Language Modeling (COLM)...',
           description: "",
           section: "News",},{
         id: 'social-cv',
