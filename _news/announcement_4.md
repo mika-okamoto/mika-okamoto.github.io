@@ -5,5 +5,5 @@ inline: true
 related_posts: false
 ---
 
-Excited to be joining **[Two Sigma Investments](https://www.twosigma.com/)** as a Software Engineering Intern this summer (2025)!
+Excited to be joining **[Two Sigma Investments](https://www.twosigma.com/)** as a Software Engineering Intern on Modeling Insights this summer (2025)!
 
