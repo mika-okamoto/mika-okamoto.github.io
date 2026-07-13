@@ -35,8 +35,8 @@ ninja.data = [{
           section: "News",},{id: "news-two-papers-accepted-to-the-human-centered-explainable-ai-hcxai-2026-workshop-at-chi-explainable-model-routing-for-agentic-workflows-and-counterfactual-explanations-for-agentic-workflows-as-spotlight-posters",
           title: 'Two papers accepted to the Human-Centered Explainable AI (HCXAI) 2026 workshop at CHI:...',
           description: "",
-          section: "News",},{id: "news-where-does-social-reasoning-come-from-accepted-to-conference-on-language-modeling-colm-2026-collaboration-between-mark-riedl-s-lab-and-eleuther-ai-on-tracing-social-reasoning-capabilities-in-llms-to-specific-pretraining-data-sources-using-gradient-based-attribution",
-          title: 'Where Does Social Reasoning Come From? accepted to Conference on Language Modeling (COLM)...',
+          section: "News",},{id: "news-where-does-social-reasoning-come-from-capability-provenance-in-language-models-accepted-to-conference-on-language-modeling-colm-2026-this-was-a-collaboration-between-mark-riedl-s-lab-and-eleuther-ai-on-tracing-social-reasoning-capabilities-in-llms-to-specific-pretraining-data-sources-using-gradient-based-attribution",
+          title: 'Where Does Social Reasoning Come From? Capability Provenance in Language Models accepted to...',
           description: "",
           section: "News",},{
         id: 'social-cv',
