@@ -1,18 +1,22 @@
 metadata:
-  last_updated: '2026-07-10'
+  last_updated: '2026-08-03'
 papers:
   rcmk3uwAAAAJ:9yKSN-GCB0IC:
     citations: 12
     title: Financial language model evaluation (FLaME)
     year: '2025'
   rcmk3uwAAAAJ:IjCSPb-OGe4C:
-    citations: 2
+    citations: 3
     title: Explainable Model Routing for Agentic Workflows
     year: '2026'
   rcmk3uwAAAAJ:Tyk-4Ss8FVUC:
     citations: 0
     title: Where Does Social Reasoning Come From? Capability Provenance in Language Models
     year: '2026'
+  rcmk3uwAAAAJ:Y0pCki6q_DkC:
+    citations: 0
+    title: Does the Model Read the Room? Probing and Patching Partner Expertise in Collaborative LLM Dialogue
+    year: Unknown Year
   rcmk3uwAAAAJ:qjMakFHDy7sC:
     citations: 2
     title: 'Trust by Design: Skill Profiles for Transparent, Cost-Aware LLM Routing'
