@@ -38,12 +38,21 @@ ninja.data = [{
           section: "News",},{id: "news-where-does-social-reasoning-come-from-capability-provenance-in-language-models-accepted-to-conference-on-language-modeling-colm-2026-this-was-a-collaboration-between-mark-riedl-s-lab-and-eleuther-ai-on-tracing-social-reasoning-capabilities-in-llms-to-specific-pretraining-data-sources-using-gradient-based-attribution",
           title: 'Where Does Social Reasoning Come From? Capability Provenance in Language Models accepted to...',
           description: "",
+          section: "News",},{id: "news-encoded-early-used-late-where-transformers-begin-to-act-on-an-inferred-partner-s-expertise-accepted-to-the-colm-2026-workshop-on-scientific-understanding-of-foundation-models-work-with-gabriele-sarti-through-the-spar-spring-2026-cohort",
+          title: 'Encoded Early, Used Late: Where Transformers Begin to Act on an Inferred Partner’s...',
+          description: "",
+          section: "News",},{id: "news-new-preprint-pact-can-enterprise-ai-assistants-be-trusted-under-pressure-a-benchmark-measuring-whether-llm-assistants-keep-following-compliance-rules-when-everyday-workplace-pressure-rewards-breaking-them-across-22-models-none-clears-the-bar-for-unsupervised-use-check-out-the-leaderboard-paper-code-and-dataset",
+          title: 'New preprint: PACT: Can Enterprise AI Assistants Be Trusted Under Pressure? — a...',
+          description: "",
+          section: "News",},{id: "news-why-do-ai-agents-break-rules-how-framing-context-and-social-signals-shape-compliance-accepted-to-aies-2026-aaai-acm-conference-on-ai-ethics-and-society-and-to-the-colm-2026-workshop-on-agent-behavior",
+          title: 'Why Do AI Agents Break Rules? How Framing, Context, and Social Signals Shape...',
+          description: "",
           section: "News",},{
         id: 'social-cv',
         title: 'CV',
         section: 'Socials',
         handler: () => {
-          window.open("/assets/pdf/resume.pdf", "_blank");
+          window.open("/assets/pdf/cv.pdf", "_blank");
         },
       },{
         id: 'social-email',
