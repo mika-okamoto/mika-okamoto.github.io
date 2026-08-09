@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: MTS @ Decagon · B.S. CS, Georgia Tech
+subtitle: Member of Technical Staff @ Decagon · B.S. CS, Georgia Tech
 
 profile:
   align: right
@@ -27,4 +27,4 @@ I am a Computer Science graduate of Georgia Tech, where I was advised by Dr. [Ma
 
 My research focuses on **explainability for AI systems** — understanding and interpreting the behavior of large language models and agentic workflows. I am particularly interested in human-centered approaches to explainability, where the goal is not just to produce explanations, but to make them useful and actionable for people interacting with AI. I also study LLM behavior more broadly, including how models reason, make decisions, and fail.
 
-I am a Member of Technical Staff at [Decagon](https://decagon.ai){:target="_blank"}, where I build simulation and evaluation systems for enterprise customer service AI agents — and evals of the simulations themselves — to drive agent improvement loops.
+I am a Member of Technical Staff at [Decagon](https://decagon.ai){:target="_blank"}, where I build the simulation, evaluation, and observability infrastructure behind enterprise customer service AI agents — diagnosing how agents fail and turning those insights into improvement loops that co-optimize agents and the simulations that test them.
