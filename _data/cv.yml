@@ -109,6 +109,7 @@ cv:
 
       - title: "Counterfactual Explanations for Agentic Workflows"
         date: "2026"
+        url: "https://zenodo.org/records/19700286"
         publisher: "HCXAI Workshop at CHI 2026"
         summary: "Singh†, M., Kim†, G., Okamoto†, M., et al. (†&nbsp;equal contribution)"
 
