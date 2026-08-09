@@ -25,6 +25,6 @@ latest_posts:
 
 I am a Computer Science graduate of Georgia Tech, where I was advised by Dr. [Mark Riedl](https://eilab.gatech.edu/mark-riedl){:target="_blank"}.
 
-My research focuses on **explainability and evaluation for AI systems** — understanding, interpreting, and measuring the behavior of large language models and agentic workflows. I am particularly interested in human-centered approaches to explainability, where the goal is not just to produce explanations, but to make them useful and actionable for people interacting with AI. I also build benchmarks and evaluations that probe how models reason, make decisions, comply with rules, and fail.
+My research focuses on **explainability and evaluation for AI systems**: understanding and measuring how large language models and agentic workflows behave. I am particularly interested in human-centered approaches to explainability, where the goal is not just to produce explanations, but to make them useful and actionable for people interacting with AI. I also build benchmarks and evaluations that test how models reason, follow rules, and fail.
 
-I am a Member of Technical Staff at [Decagon](https://decagon.ai){:target="_blank"}, where I build simulations and evaluations for enterprise customer service AI agents — diagnosing how agents fail and turning those insights into better agents.
+I am a Member of Technical Staff at [Decagon](https://decagon.ai){:target="_blank"}, where I build simulations and evaluations that show how enterprise customer service AI agents fail, and use them to make the agents better.
