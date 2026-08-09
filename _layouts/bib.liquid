@@ -265,6 +265,9 @@
         {% if entry.website != blank %}
           <a href="{{ entry.website }}" class="btn btn-sm z-depth-0" role="button">Website</a>
         {% endif %}
+        {% if entry.dataset != blank %}
+          <a href="{{ entry.dataset }}" class="btn btn-sm z-depth-0" role="button">Dataset</a>
+        {% endif %}
       </div>
       {% if site.enable_publication_badges %}
         {% assign entry_has_altmetric_badge = false %}
