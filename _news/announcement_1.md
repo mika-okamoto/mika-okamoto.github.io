@@ -5,5 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Two papers accepted to the **[Human-Centered Explainable AI (HCXAI) 2026](https://hcxai.jimdosite.com/)** workshop at CHI: *Explainable Model Routing for Agentic Workflows* and *Counterfactual Explanations for Agentic Workflows* as spotlight posters!
-
+Two papers accepted to the **[Human-Centered Explainable AI (HCXAI) 2026](https://hcxai.jimdosite.com/)** workshop at [CHI](https://chi2026.acm.org/): _Explainable Model Routing for Agentic Workflows_ and _Counterfactual Explanations for Agentic Workflows_ as spotlight presentations!
