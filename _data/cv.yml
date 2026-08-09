@@ -11,14 +11,56 @@ cv:
         location: Atlanta, GA
         url: https://www.gatech.edu/
         studyType: "B.S. in Computer Science"
-        start_date: 2023
-        end_date: 2026
+        start_date: 2023-08
+        end_date: 2026-05
         highlights:
-          - "GPA: 4.00 | Expected Graduation: May 2026"
-          - "Concentration: Machine Learning and Data Systems"
-          - "Relevant Coursework: Machine Learning, Databases, Computer Systems and Networks, Data Structures and Algorithms"
+          - "GPA: 4.00"
 
     Experience:
+      - company: Decagon
+        position: Member of Technical Staff
+        url: https://decagon.ai/
+        start_date: 2026-06
+        end_date: present
+        highlights:
+          - Enhanced an opaque simulation framework for CX agents through LLM-based diagnosis of chat logs against a data-driven failure taxonomy, iterating with real users to create truly useful automations that accelerated debugging by 3x across 100+ deals.
+          - Integrated customer telemetry into Decagon's observability platform, unblocking agent hill-climbing over customer-indexed success metrics, which uncovered improvement opportunities that closed multi-million dollar contracts.
+          - Consolidated alerting into a standard framework that eliminates coverage gaps and reliably detects incidents.
+          - Built a system to enhance agents by translating customer test specs into formal simulations, identifying misalignment between programmed and anticipated agent behavior, and iteratively co-optimizing agents and simulations.
+
+      - company: Trace AI Labs
+        position: Co-founder and Lead Researcher
+        url: https://github.com/trace-ai-labs
+        start_date: 2026-01
+        end_date: present
+        highlights:
+          - Created PACT, a multi-metric evaluation framework to assess whether enterprise AI assistants follow compliance rules in 48 realistic scenarios across regulated domains like healthcare, revealing no existing model is reliably safe (preprint under review).
+          - Analyzed the psychology of why AI agents violate legal constraints under user pressure tactics, showing alignment between LLM behavior and prevailing human behavioral theories like deterrence and legitimacy (AIES 2026).
+
+      - company: Georgia Tech — Human-Centered AI Lab
+        position: Research Assistant
+        location: Atlanta, GA
+        url: https://eilab.gatech.edu/
+        start_date: 2024-08
+        end_date: 2026-05
+        highlights:
+          - Advised by Dr. Mark Riedl.
+          - Instrumented an explainable system that profiles LLMs' strengths and weaknesses and selects the best model for tasks under cost constraints (MLSys YPS 2025), and generalized it to routing complex agent workflows (HCXAI at CHI 2026).
+          - Traced where social reasoning in LLMs originates in pretraining corpora using training-data attribution (COLM 2026).
+          - Developed counterfactual explanation methods that translate complex agentic-workflow behavior and errors into clear, actionable insights for developers through a visual, interactive interface (HCXAI at CHI 2026).
+          - Led FLaME, the first holistic benchmark of LLMs over diverse financial analysis and reasoning tasks (ACL Findings 2025).
+
+      - company: Georgia Tech Research Institute (GTRI)
+        position: Research Assistant
+        location: Atlanta, GA
+        url: https://www.gtri.gatech.edu/
+        start_date: 2024-01
+        end_date: 2025-12
+        highlights:
+          - Built an agentic sandbox with a chat interface for creating, executing, and debugging scientific experiments, infusing context from retrieved research papers and code to empower researchers to rapidly iterate on their ideas.
+          - Proposed novel graph algorithms for decomposing scientific claims into atomic parts for automatic verification.
+          - Architected MethodBench, a framework for evaluating LLM competence in determining the solution to open-ended, but previously solved, scientific problems (under review; DARPA Contract HR001125C0302).
+
       - company: Two Sigma Investments
         position: Software Engineer Intern
         location: New York, NY
@@ -26,77 +68,55 @@ cv:
         start_date: 2025-06
         end_date: 2025-08
         highlights:
-          - Designed key performance metrics through collaboration with the product team that provide traders actionable feedback on their ideas, driving deeper platform engagement and higher-quality work.
-          - Engineered Python library to perform automated daily metric calculations and large-scale backfills.
-          - Built and deployed ETL pipeline using AWS Lambda and Step Functions to process data in Amazon RDS with PostgreSQL, including Datadog monitoring, unit tests, and full documentation.
-
-      - company: Georgia Tech — EI & HCAI Lab
-        position: Research Assistant
-        location: Atlanta, GA
-        url: https://eilab.gatech.edu/
-        start_date: 2025-01
-        end_date: present
-        highlights:
-          - Advised by Dr. Mark Riedl.
-          - Researching explainable AI for multi-step agentic AI systems, enabling users to understand why tasks are delegated to specific models and supporting meaningful human oversight of automated pipelines; paper accepted at HCXAI Workshop at CHI 2026.
-          - Developing counterfactual explanation methods for agentic workflows that provide users with actionable insights into how workflow outcomes could have differed under alternative conditions, helping identify failure modes and build appropriate trust.
-          - Investigating machine unlearning methods to identify how training data composition correlates with language model performance on specific task domains, with the goal of enabling targeted capability control.
-
-      - company: Georgia Tech Research Institute (GTRI) — ARCAID Lab
-        position: Research Assistant
-        location: Atlanta, GA
-        url: https://www.gtri.gatech.edu/
-        start_date: 2024-01
-        end_date: present
-        highlights:
-          - Advised by Dr. Clayton Kerce and Dr. Pat Langley.
-          - Devising search algorithms that utilize AI agents to optimize scientific claim decomposition and verification, improving factual accuracy assessment in complex reasoning settings.
-          - Researching techniques for learning generalized solutions to planning problems via hierarchical problem networks, aiming to reduce search complexity and enable more efficient automated reasoning.
-          - Built a RAG-enhanced chatbot over a corpus of research papers and a code generation pipeline for creating, executing, and debugging Python simulations, empowering researchers to rapidly onboard to specialized topics and test ideas experimentally.
-
-      - company: Georgia Tech — Financial Services Innovation Lab (FinTech Lab)
-        position: Research Assistant
-        location: Atlanta, GA
-        url: https://fintech.gatech.edu/
-        start_date: 2024-01
-        end_date: present
-        highlights:
-          - Advised by Dr. Sudheer Chava.
-          - Designed BELLA, a system to profile LLMs' strengths and weaknesses and recommend the optimal model for a task based on budget constraints and necessary skills; presented as first-author paper (poster) at MLSys Young Professionals Symposium 2025.
-          - Co-created FLaME, a holistic finance benchmark for evaluating language models across sentiment analysis, numerical reasoning, document understanding, and question answering; co-first author paper accepted at ACL Findings 2025.
-          - Benchmarked LLM prompting methods for financial sentiment classification, achieving 10% relative improvement over baselines via automated prompt optimization.
-
-      - company: Raytheon Technologies (RTX)
-        position: Machine Learning Engineering Intern
-        location: Cedar Rapids, IA
-        start_date: 2024-05
-        end_date: 2024-08
-        highlights:
-          - Developed a production-approved Python framework to integrate explainable AI into existing ML workflows, enabling post-hoc interpretability for deployed models.
-          - Integrated MLflow to enhance experiment tracking and reproducibility in MLOps processes, saving 50+ hours/month in manual logging overhead.
-          - Improved object detection throughput on a constrained security system by 5x via multithreading and pipeline optimization.
-
-      - company: Palmer Lab, UC San Diego
-        position: Bioinformatics Research Assistant
-        location: San Diego, CA
-        url: https://palmerlab.org/
-        start_date: 2023-06
-        end_date: 2023-10
-        highlights:
-          - Optimized ML algorithm for phenotype trait prediction based on genetic data through feature reduction with Python & R, reducing input features from 7.3M to 50k with minimal (< 0.01%) performance degradation.
-          - Co-authored 2 peer-reviewed journal articles on genetic prediction (JARO and bioRxiv).
-          - Performed GWAS pipeline preparation and data quality control for large-scale genomics datasets.
+          - Designed metrics to provide traders actionable feedback on their stock ideas and market timing, surfacing suboptimal trading patterns and informing more profitable quantitative models distilled from human trading intuition.
+          - Built an AWS-native ETL pipeline using Lambda and Step Functions to process metrics in Postgres, incorporating observability, testing, and documentation to ensure reliable and rapid insight delivery to quantitative researchers.
 
     Publications:
+      - title: "PACT: Can Enterprise AI Assistants Be Trusted Under Pressure?"
+        date: "2026"
+        url: "https://trace-ai-labs.github.io/pact/"
+        publisher: "Under review"
+        summary: "Okamoto, M., & Erol, A. K."
+
+      - title: "Why Do AI Agents Break Rules? How Framing, Context, and Social Signals Shape Compliance"
+        date: "2026"
+        url: "https://trace-ai-labs.github.io/ai-incentives/"
+        publisher: "AIES 2026 (also at the COLM Workshop on Agent Behavior)"
+        summary: "Okamoto, M., Erol, A. K., & Erol, K."
+
+      - title: "Where Does Social Reasoning Come From? Capability Provenance in Language Models"
+        date: "2026"
+        url: "https://arxiv.org/pdf/2606.19625"
+        publisher: "Conference on Language Modeling (COLM) 2026"
+        summary: "Matlin, G., Chakraborty, C., Eom, S., Okamoto, M., et al."
+
+      - title: "Encoded Early, Used Late: Where Transformers Begin to Act on an Inferred Partner's Expertise"
+        date: "2026"
+        url: "/assets/pdf/encoded_early_used_late.pdf"
+        publisher: "COLM Workshop on Scientific Understanding of Foundation Models 2026"
+        summary: "Okamoto, M., & Sarti, G."
+
       - title: "Explainable Model Routing for Agentic Workflows"
         date: "2026"
+        url: "https://arxiv.org/abs/2604.03527"
         publisher: "HCXAI Workshop at CHI 2026"
         summary: "Okamoto, M., Erol, A., & Riedl, M."
+
+      - title: "Method Bench: Evaluating Path-to-Feasibility Reasoning in the Sciences"
+        date: "2026"
+        publisher: "Under review"
+        summary: "Johnson, B., Okamoto, M., Kerce, J. C., & Fekri, F."
 
       - title: "Counterfactual Explanations for Agentic Workflows"
         date: "2026"
         publisher: "HCXAI Workshop at CHI 2026"
         summary: "Singh†, M., Kim†, G., Okamoto†, M., et al. (†&nbsp;equal contribution)"
+
+      - title: "DeepVerify: Evidence-Based Expert-Level Scientific Claim Verification"
+        date: "2026"
+        url: "https://github.com/xiongsiheng/DeepVerify"
+        publisher: "Preprint"
+        summary: "Xiong, S., Gungordu, O., Johnson, B., Okamoto, M., Kerce, J. C., & Fekri, F."
 
       - title: "FLaME: Holistic Finance Language Model Evaluation"
         date: "2025"
@@ -104,36 +124,43 @@ cv:
         publisher: "ACL Findings 2025"
         summary: "Matlin†, G., Okamoto†, M., Pardawala†, H., Yang, Y., & Chava, S. (†&nbsp;equal contribution)"
 
-      - title: "Trust by Design: Skill Profiles for Transparent, Cost-Aware LLM Routing (BELLA)"
+      - title: "Trust by Design: Skill Profiles for Transparent, Cost-Aware LLM Routing"
         date: "2025"
         url: "https://arxiv.org/abs/2602.02386"
         publisher: "MLSys Young Professionals Symposium (YPS) 2025"
         summary: "Okamoto, M., Erol, A., & Matlin, G."
 
-      - title: "Genome-Wide Association Study of Age-Related Hearing Loss in CFW Mice"
+      - title: "Enhancing Military Family Readiness and Resilience Programs Through LLM-Generated Synthetic Data and Natural Language Interfaces"
+        date: "2025"
+        publisher: "Military Health System Research Symposium (MHSRS) 2025"
+        summary: "Iyer†, A., Okamoto†, M., et al. (†&nbsp;equal contribution)"
+
+      - title: "Genome-Wide Association Study of Age-Related Hearing Loss in CFW Mice Identifies Multiple Genes and Loci, Including Prkag2"
         date: "2025"
         url: "https://link.springer.com/article/10.1007/s10162-025-00994-1"
         publisher: "Journal of the Association for Research in Otolaryngology (JARO)"
         summary: "Polesskaya, O., Boussaty, E., Cheng, R., et al."
 
-      - title: "RATTACA: Genetic Predictions in Heterogeneous Stock Rats"
+      - title: "RATTACA: Genetic Predictions in Heterogeneous Stock Rats Offer a New Tool for Genetic Correlation and Experimental Design"
         date: "2023"
         url: "https://www.biorxiv.org/content/10.1101/2023.09.18.558279v1.full.pdf"
         publisher: "bioRxiv"
-        summary: "Johnson, B. B., Sanches, T. M., Okamoto, M. H., et al."
+        summary: "Johnson†, B. B., Sanches†, T. M., Okamoto†, M., et al. (†&nbsp;equal contribution)"
 
-    Service:
-      - bullet: "Reviewer, ACL Rolling Review (ARR) — January 2026"
+    Activities:
+      - bullet: "**Reviewing / Program Committees**: ACL Rolling Review ERC Member (2026), ACM/AAAI Conference on AI Ethics and Society PC Member (2026), EleutherAI Summer of Open AI Research Application Reviewer (2026)"
+      - bullet: "**Awards / Fellowships**: Supervised Program for Alignment Research (2026); Georgia Tech Fintech Research Fellow (2025)"
+      - bullet: "**Research Presentations**: AAAI/ACM Conference on AI Ethics and Society (2026), ACM CHI Workshop on Human-Centered Explainable AI (2026), MLSys Young Professionals Symposium (2025), COLM Workshop on Agent Behavior (2026), COLM Workshop on Scientific Understanding of Foundation Models (2026)"
 
     Skills:
-      - name: Programming Languages
-        keywords: "Python, Java, SQL, R, Bash, C++, HTML, CSS, JavaScript, Golang"
+      - name: Programming
+        keywords: "Python, R, Java, SQL, Bash, C++, HTML, JavaScript, TypeScript, Go"
 
-      - name: Machine Learning & AI
-        keywords: "PyTorch, TensorFlow, scikit-learn, Pandas, NumPy, OpenCV, Explainable AI, LLMs, NLP, Automated Reasoning, Machine Unlearning"
+      - name: Technologies
+        keywords: "Git, GitHub, Docker, AWS, Hugging Face, ReactJS, Flask, REST APIs, Postgres, Coding Agents"
 
-      - name: Cloud & Infrastructure
-        keywords: "Amazon Web Services (AWS), Docker, Git, GitHub, Datadog, Jira, Confluence"
+      - name: Data & ML
+        keywords: "PyTorch, TensorFlow, Scikit, Pandas, NumPy, Jupyter, MLFlow, Matplotlib, Seaborn, R-Studio"
 
-      - name: Full Stack & Data Engineering
-        keywords: "ReactJS, Flask, Gradle, REST APIs, Firebase, PostgreSQL, MySQL, SQLite, Microsoft SQL Server"
+      - name: Natural Language
+        keywords: "LLM and Agent Evaluation, LLM-as-judge, Fine-tuning, Agent Orchestration, Explainable AI"
