@@ -41,8 +41,8 @@ ninja.data = [{
           section: "News",},{id: "news-why-do-ai-agents-break-rules-how-framing-context-and-social-signals-shape-compliance-accepted-to-aies-2026-aaai-acm-conference-on-ai-ethics-and-society-and-to-the-colm-2026-workshop-on-agent-behavior",
           title: 'Why Do AI Agents Break Rules? How Framing, Context, and Social Signals Shape...',
           description: "",
-          section: "News",},{id: "news-new-preprint-pact-can-enterprise-ai-assistants-be-trusted-under-pressure-a-benchmark-testing-whether-llm-assistants-keep-following-compliance-rules-across-12-regulated-domains-when-workplace-pressure-rewards-breaking-them-no-model-clears-the-bar-for-unsupervised-use-check-out-the-leaderboard-paper-code-and-dataset",
-          title: 'New preprint: PACT: Can Enterprise AI Assistants Be Trusted Under Pressure? — a...',
+          section: "News",},{id: "news-new-preprint-pact-can-enterprise-ai-assistants-be-trusted-under-pressure-pact-tests-whether-ai-assistants-keep-following-the-rules-in-their-instructions-when-a-persistent-user-a-hurried-manager-or-a-convenient-shortcut-pushes-them-toward-a-violation-spanning-48-workplace-scenarios-in-12-regulated-domains-across-22-models-none-clears-the-bar-for-unsupervised-use-check-out-the-leaderboard-paper-code-and-dataset",
+          title: 'New preprint: PACT: Can Enterprise AI Assistants Be Trusted Under Pressure? PACT tests...',
           description: "",
           section: "News",},{
         id: 'social-cv',
