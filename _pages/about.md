@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: B.S. in Computer Science, Georgia Institute of Technology
+subtitle: MTS @ Decagon · B.S. CS, Georgia Tech
 
 profile:
   align: right
