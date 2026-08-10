@@ -38,7 +38,7 @@ ninja.data = [{
           section: "News",},{id: "news-where-does-social-reasoning-come-from-capability-provenance-in-language-models-accepted-to-conference-on-language-modeling-colm-2026-this-was-a-collaboration-between-mark-riedl-s-lab-and-eleuther-ai-on-tracing-social-reasoning-capabilities-in-llms-to-specific-pretraining-data-sources-using-gradient-based-attribution",
           title: 'Where Does Social Reasoning Come From? Capability Provenance in Language Models accepted to...',
           description: "",
-          section: "News",},{id: "news-why-do-ai-agents-break-rules-how-framing-context-and-social-signals-shape-compliance-accepted-to-aies-2026-aaai-acm-conference-on-ai-ethics-and-society-and-to-the-colm-2026-workshop-on-agent-behavior",
+          section: "News",},{id: "news-why-do-ai-agents-break-rules-how-framing-context-and-social-signals-shape-compliance-accepted-to-aies-2026-aaai-acm-conference-on-ai-ethics-and-society",
           title: 'Why Do AI Agents Break Rules? How Framing, Context, and Social Signals Shape...',
           description: "",
           section: "News",},{id: "news-new-preprint-pact-can-enterprise-ai-assistants-be-trusted-under-pressure-a-novel-benchmark-testing-whether-ai-assistants-follow-enterprise-rules-and-regulations-despite-pressures-check-out-the-website-paper-and-code",
