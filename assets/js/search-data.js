@@ -41,7 +41,7 @@ ninja.data = [{
           section: "News",},{id: "news-why-do-ai-agents-break-rules-how-framing-context-and-social-signals-shape-compliance-accepted-to-aies-2026-aaai-acm-conference-on-ai-ethics-and-society-and-to-the-colm-2026-workshop-on-agent-behavior",
           title: 'Why Do AI Agents Break Rules? How Framing, Context, and Social Signals Shape...',
           description: "",
-          section: "News",},{id: "news-new-preprint-pact-can-enterprise-ai-assistants-be-trusted-under-pressure-a-novel-benchmark-testing-whether-ai-assistants-keep-following-company-rules-when-violating-them-is-the-convenient-choice-check-out-the-website-paper-and-code",
+          section: "News",},{id: "news-new-preprint-pact-can-enterprise-ai-assistants-be-trusted-under-pressure-a-novel-benchmark-testing-whether-ai-assistants-follow-enterprise-rules-and-regulations-despite-pressures-check-out-the-website-paper-and-code",
           title: 'New preprint: PACT: Can Enterprise AI Assistants Be Trusted Under Pressure? A novel...',
           description: "",
           section: "News",},{
