@@ -1,8 +1,8 @@
 metadata:
-  last_updated: '2026-08-03'
+  last_updated: '2026-08-19'
 papers:
   rcmk3uwAAAAJ:9yKSN-GCB0IC:
-    citations: 12
+    citations: 13
     title: Financial language model evaluation (FLaME)
     year: '2025'
   rcmk3uwAAAAJ:IjCSPb-OGe4C:
@@ -13,16 +13,20 @@ papers:
     citations: 0
     title: Where Does Social Reasoning Come From? Capability Provenance in Language Models
     year: '2026'
+  rcmk3uwAAAAJ:W7OEmFMy1HYC:
+    citations: 0
+    title: Counterfactual Explanations for Agentic Workflows
+    year: '2026'
   rcmk3uwAAAAJ:Y0pCki6q_DkC:
     citations: 0
-    title: Does the Model Read the Room? Probing and Patching Partner Expertise in Collaborative LLM Dialogue
-    year: Unknown Year
+    title: 'Encoded Early, Used Late: Where Transformers Begin to Act on an Inferred Partner''s Expertise'
+    year: '2026'
   rcmk3uwAAAAJ:qjMakFHDy7sC:
     citations: 2
     title: 'Trust by Design: Skill Profiles for Transparent, Cost-Aware LLM Routing'
     year: '2026'
   rcmk3uwAAAAJ:u-x6o8ySG0sC:
-    citations: 3
+    citations: 4
     title: Genome-Wide Association Study of Age-Related Hearing Loss in CFW Mice Identifies Multiple Genes and Loci, Including Prkag2 O. Polesskaya et al.
     year: '2025'
   rcmk3uwAAAAJ:u5HHmVD_uO8C:
