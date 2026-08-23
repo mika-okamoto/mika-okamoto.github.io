@@ -30,7 +30,7 @@ cv:
 
       - company: Trace AI Labs
         position: Co-founder and Lead Researcher
-        url: https://github.com/trace-ai-labs
+        url: https://trace-ai-labs.github.io
         start_date: 2026-01
         end_date: present
         highlights:
@@ -80,7 +80,7 @@ cv:
 
       - title: "Why Do AI Agents Break Rules? How Framing, Context, and Social Signals Shape Compliance"
         date: "2026"
-        url: "https://trace-ai-labs.github.io/ai-incentives/"
+        url: "https://arxiv.org/abs/2608.12323"
         publisher: "AIES 2026 (also at the COLM Workshop on Agent Behavior)"
         summary: "Okamoto, M., Erol, A. K., & Erol, K."
 
@@ -92,7 +92,7 @@ cv:
 
       - title: "Encoded Early, Used Late: Where Transformers Begin to Act on an Inferred Partner's Expertise"
         date: "2026"
-        url: "/assets/pdf/encoded_early_used_late.pdf"
+        url: "https://openreview.net/pdf?id=j1wc4ylrmf"
         publisher: "COLM Workshop on Scientific Understanding of Foundation Models 2026"
         summary: "Okamoto, M., & Sarti, G."
 
