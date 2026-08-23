@@ -27,4 +27,4 @@ I am a Member of Technical Staff at [Decagon](https://decagon.ai){:target="_blan
 
 I recently graduated from Georgia Tech, where I was advised by [Dr. Mark Riedl](https://eilab.gatech.edu/mark-riedl){:target="_blank"}.
 
-My research focuses on **explainability and evaluation for AI systems**: understanding and measuring how LLMs and agents behave, especially via a human-centered approach that targets actionable explanations for people interacting with AI systems. I also build benchmarks that test how models reason, make decisions, and fail, to inform model selection decisions, identify necessary safeguards, and ground self-improving agent loops.
+My research focuses on **explainability and evaluation for AI systems**: understanding and measuring how LLMs and agents behave, especially via a human-centered approach that targets actionable explanations for people interacting with AI systems. I also build benchmarks that test how models reason, make decisions, and fail, to inform model selection decisions, identify necessary safeguards, and ground self-improving agent loops. More on this work at [TRACE AI Labs](https://trace-ai-labs.github.io){:target="_blank"}.
