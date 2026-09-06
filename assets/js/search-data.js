@@ -73,6 +73,13 @@ ninja.data = [{
           window.open("https://www.linkedin.com/in/mokamoto", "_blank");
         },
       },{
+        id: 'social-x',
+        title: 'X',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://twitter.com/mikahokamoto", "_blank");
+        },
+      },{
         id: 'social-scholar',
         title: 'Google Scholar',
         section: 'Socials',
