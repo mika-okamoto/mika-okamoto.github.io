@@ -16,13 +16,6 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/publications/";
           },
-        },{id: "nav-cv",
-          title: "CV",
-          description: "",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/cv/";
-          },
         },{id: "news-excited-to-be-joining-two-sigma-investments-as-a-software-engineering-intern-on-modeling-insights-this-summer-2025",
           title: 'Excited to be joining Two Sigma Investments as a Software Engineering Intern on...',
           description: "",
@@ -45,13 +38,6 @@ ninja.data = [{
           title: 'New preprint: PACT: Can Enterprise AI Assistants Be Trusted Under Pressure? A novel...',
           description: "",
           section: "News",},{
-        id: 'social-cv',
-        title: 'CV',
-        section: 'Socials',
-        handler: () => {
-          window.open("/assets/pdf/cv.pdf", "_blank");
-        },
-      },{
         id: 'social-email',
         title: 'email',
         section: 'Socials',
